@@ -19,7 +19,7 @@
         </mat-select>
       </mat-form-field>
 
-      <mat-slide-toggle color="accent" (change)="toggleDarkTheme($event.checked)" [checked]="isDarkTheme">
+      <mat-slide-toggle color="accent" (change)="toggleDarkTheme($event.checked)" [checked]="isDarkTheme" aria-label="change color theme">
         <fa-icon *ngIf="!isDarkTheme" class="theme-icon" [icon]="['fas', 'adjust']" size="lg" rotate="180"></fa-icon>
         <fa-icon *ngIf="isDarkTheme" class="theme-icon" [icon]="['fas', 'adjust']" size="lg"></fa-icon>
       </mat-slide-toggle>

@@ -4,4 +4,5 @@ export interface SocialNetwork {
   icon: string;
   size: string;
   color: string;
+  text: string;
 }

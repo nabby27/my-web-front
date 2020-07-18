@@ -6,20 +6,23 @@ export const aboutMeSocialNetworks: SocialNetwork[] = [
         iconPrefix: 'fab',
         icon: 'linkedin',
         size: '2x',
-        color: '#777'
+        color: '#777',
+        text: 'linkdin'
     },
     {
         url: 'https://www.instagram.com/ivancordoba_06/',
         iconPrefix: 'fab',
         icon: 'instagram',
         size: '2x',
-        color: '#777'
+        color: '#777',
+        text: 'instagram'
     },
     {
         url: 'https://twitter.com/IvanCordoba_06',
         iconPrefix: 'fab',
         icon: 'twitter',
         size: '2x',
-        color: '#777'
+        color: '#777',
+        text: 'twitter'
     }
 ];

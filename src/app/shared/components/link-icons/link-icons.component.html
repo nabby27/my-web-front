@@ -1,7 +1,7 @@
 <div>
   <ul class="link-icon-list">
     <li class="link-icon-item" *ngFor="let linkIcon of linkIcons">
-      <a mat-icon-button [href]="linkIcon.url" target="_blank" [style.color]="linkIcon.color">
+      <a mat-icon-button [href]="linkIcon.url" target="_blank" rel="noopener noreferrer" [style.color]="linkIcon.color" [attr.aria-label]="linkIcon.text">
         <fa-icon class="icon" [icon]="[linkIcon.iconPrefix, linkIcon.icon]" [size]="linkIcon.size"></fa-icon>
       </a>
     </li>

@@ -2,9 +2,9 @@
   <mat-card-header class="github-card-header">
     <mat-card-title>{{githubRepository.name}}</mat-card-title>
     <mat-card-subtitle>
-      <mat-chip-list *ngIf="githubRepository.language">
+      <mat-chip-list *ngIf="githubRepository.language" aria-label="programming languages">
         <!-- {{getColorForProgrammingLanguage(githubRepository.language)}} -->
-        <mat-chip [style.backgroundColor]="getColorForProgrammingLanguage(githubRepository.language)">
+        <mat-chip [style.backgroundColor]="getColorForProgrammingLanguage(githubRepository.language)" [attr.aria-label]="githubRepository.language">
           <!-- <mat-chip> -->
           {{githubRepository.language}}
         </mat-chip>
@@ -30,7 +30,7 @@
           <fa-icon class="github-icon" [icon]="['fas', 'eye']"></fa-icon> {{githubRepository.watchers_count}}
         </div>
       </div>
-      <a mat-button [href]="githubRepository.html_url" target="_blank">
+      <a mat-button [href]="githubRepository.html_url" target="_blank" rel="noopener noreferrer">
         <span>{{'see more' | translate}}</span>
         <fa-icon class="github-icon" [icon]="['fas', 'chevron-right']"></fa-icon>
       </a>
