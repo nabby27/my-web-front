@@ -16,7 +16,7 @@ import { HttpClient } from '@angular/common/http';
   ],
   imports: [
     BrowserAnimationsModule,
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     CoreModule,
     AppRoutingModule,
     TranslateModule.forRoot({

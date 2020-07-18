@@ -1,8 +1,9 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Inject, PLATFORM_ID } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import { faAdjust } from '@fortawesome/free-solid-svg-icons';
 import { ThemeService } from 'src/app/services/theme.service';
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-sidenav',
@@ -26,6 +27,7 @@ export class SidenavComponent implements OnInit {
   ];
 
   constructor(
+    @Inject(PLATFORM_ID) private platformId: object,
     private themeService: ThemeService,
     public translate: TranslateService,
     private library: FaIconLibrary
@@ -45,7 +47,9 @@ export class SidenavComponent implements OnInit {
 
   switchLang(lang: string) {
     this.translate.use(lang);
-    localStorage.setItem('lang', lang);
+    if (isPlatformBrowser(this.platformId)) {
+      localStorage.setItem('lang', lang);
+    }
   }
 
   toggleDarkTheme(checked: boolean) {
