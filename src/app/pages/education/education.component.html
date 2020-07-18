@@ -1,0 +1,32 @@
+<div class="education-container">
+  <mat-accordion multi="true">
+    <mat-expansion-panel expanded="true" *ngIf="academics_trainings">
+      <mat-expansion-panel-header>
+        <mat-panel-title class="academic-panel-title">
+          <fa-icon class="icon" [icon]="['fas', 'graduation-cap']" size="lg"></fa-icon>
+          {{'ACADEMIC TRAINING' | translate}}
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <section class="list-academic-title">
+        <article *ngFor="let academicTraining of academics_trainings">
+          <app-academic-title-card [academicTitle]="academicTraining"></app-academic-title-card>
+        </article>
+      </section>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel expanded="true">
+      <mat-expansion-panel-header>
+        <mat-panel-title class="academic-panel-title">
+          <fa-icon class="icon" [icon]="['fas', 'award']" size="lg"></fa-icon>
+          {{'COURSES' | translate}}
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <section class="list-academic-title">
+        <article *ngFor="let course of courses">
+          <app-academic-title-card [academicTitle]="course"></app-academic-title-card>
+        </article>
+      </section>
+    </mat-expansion-panel>
+
+  </mat-accordion>
+</div>

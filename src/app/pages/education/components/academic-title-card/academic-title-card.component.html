@@ -1,0 +1,23 @@
+<mat-card class="academic-title-card">
+  <mat-card-header class="academic-title-card-header">
+    <mat-card-title>{{academicTitle.academic_title | translate}}</mat-card-title>
+    <mat-card-subtitle>{{academicTitle.specialist | translate}}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content class="academic-title-card-content">
+    <div *ngIf="!academicTitle.isOnline">
+      <fa-icon [icon]="['fas', 'map-marker-alt']"></fa-icon>
+      {{academicTitle.location | translate}}
+    </div>
+    <div *ngIf="academicTitle.isOnline">
+      <fa-icon [icon]="['fas', 'globe']"></fa-icon>
+      {{academicTitle.location | translate}}
+    </div>
+    <div>
+      <fa-icon [icon]="['fas', 'hourglass-end']"></fa-icon> {{academicTitle.end_year}}
+    </div>
+  </mat-card-content>
+  <mat-card-actions *ngIf="academicTitle.url_certificate" class="academic-title-card-footer">
+    <a mat-button [href]="academicTitle.url_certificate">{{'Download the certificate' | translate}} <fa-icon
+        [icon]="['fas', 'download']"></fa-icon></a>
+  </mat-card-actions>
+</mat-card>

@@ -1,0 +1,11 @@
+<mat-toolbar color="primary" class="header-toolbar">
+  <div class="header-menu">
+    <button mat-icon-button (click)="sidenavElement.toggle()">
+      <fa-icon class="icon" [icon]="['fas', 'bars']" size="lg"></fa-icon>
+    </button>
+    <a class="header-item-name" routerLink="/home">
+      Iván Córdoba
+    </a>
+  </div>
+  <app-link-icons [linkIcons]="socialNetworks"></app-link-icons>
+</mat-toolbar>

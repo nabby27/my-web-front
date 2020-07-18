@@ -1,0 +1,86 @@
+<div class="container">
+  <mat-card class="contact-card">
+    <mat-card-header class="card-title-reasons">
+      <mat-card-title>
+        <h2 class="card-title-reasons-h2">{{'Contact me!' | translate}}</h2>
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-content class="card-content-reasons">
+      <ul class="list-reasons-to-contact">
+        <li class="reason-to-contact">
+          {{'Do you have a project in mind?' | translate}}
+        </li>
+        <li class="reason-to-contact">
+          {{'Do you want a collaboration?' | translate}}
+        </li>
+        <li class="reason-to-contact">
+          {{'Do you need some help?' | translate}}
+        </li>
+      </ul>
+      <p class="card-content-reasons-text">
+        {{'You can send me an email to' | translate}}
+        <a href="mailto:icordobadonet@gmail.com" class="mail-to-contact accent">
+          icordobadonet@gmail.com
+        </a> {{'or fill out the form' | translate}}.
+      </p>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card class="contact-card">
+    <mat-card-content>
+      <form [formGroup]="contactForm" #contactFormDirective="ngForm" class="contact-form"
+        (ngSubmit)="sendMail(contactFormDirective)">
+        <div class="contact-form-field">
+          <mat-form-field>
+            <input matInput placeholder="{{'Name' | translate}}" formControlName="name">
+          </mat-form-field>
+          <mat-error *ngIf="name.touched && name.hasError('required')">
+            {{'I need to know your name' | translate}}
+          </mat-error>
+        </div>
+
+        <div class="contact-form-field">
+          <mat-form-field>
+            <input matInput placeholder="{{'E-mail' | translate}}" formControlName="email">
+          </mat-form-field>
+          <mat-error *ngIf="email.touched && email.hasError('email') && !email.hasError('required')">
+            {{'Please enter a valid email address' | translate}}
+          </mat-error>
+          <mat-error *ngIf="email.touched && email.hasError('required')">
+            {{'Maybe you want me to contact you' | translate}}
+          </mat-error>
+        </div>
+
+        <div class="contact-form-field">
+          <mat-form-field>
+            <input matInput type="number" placeholder="{{num1ToSum}} + {{num2ToSum}}" formControlName="sum">
+          </mat-form-field>
+          <mat-error *ngIf="sum.touched && sum.hasError('correctSum') && !sum.hasError('required')">
+            {{'The sum is not correct, maybe you are a robot!' | translate}}
+          </mat-error>
+          <mat-error *ngIf="sum.touched && sum.hasError('required')">
+            {{'It is required to avoid robots' | translate}}
+          </mat-error>
+        </div>
+
+        <div class="contact-form-field">
+          <mat-form-field>
+            <textarea matInput cdkTextareaAutosize #autosize="cdkTextareaAutosize"
+              placeholder="{{'Leave a message' | translate}}" formControlName="message"></textarea>
+          </mat-form-field>
+          <mat-error *ngIf="message.touched && message.hasError('required')">
+            {{'What do you want to tell me?' | translate}}
+          </mat-error>
+        </div>
+
+        <button class="contact-form-button" [disabled]="!contactForm.valid" mat-raised-button color="primary">
+          {{'Send me your message' | translate}}
+        </button>
+
+        <div *ngIf="isMailBeenSended" class="spinner-container">
+          <mat-progress-spinner color="accent" mode="indeterminate" diameter="50"></mat-progress-spinner>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

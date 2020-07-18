@@ -1,0 +1,56 @@
+import { Component, OnInit, Input } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
+import { FaIconLibrary } from '@fortawesome/angular-fontawesome';
+import { faAdjust } from '@fortawesome/free-solid-svg-icons';
+import { ThemeService } from 'src/app/services/theme.service';
+
+@Component({
+  selector: 'app-sidenav',
+  templateUrl: './sidenav.component.html',
+  styleUrls: ['./sidenav.component.scss']
+})
+export class SidenavComponent implements OnInit {
+
+  @Input() sidenavElement;
+  @Input() isDesktopScreen;
+
+  isDarkTheme;
+
+  links = [
+    { text: 'HOME', url: '/home' },
+    { text: 'EDUCATION', url: '/education' },
+    { text: 'WORK EXPERIENCE', url: '/work-experience' },
+    { text: 'PROJECTS', url: '/projects' },
+    { text: 'ABOUT ME', url: '/about-me' },
+    { text: 'CONTACT', url: '/contact' }
+  ];
+
+  constructor(
+    private themeService: ThemeService,
+    public translate: TranslateService,
+    private library: FaIconLibrary
+  ) {
+    this.library.addIcons(faAdjust);
+  }
+
+  ngOnInit() {
+    this.isDarkTheme = this.themeService.isDark;
+  }
+
+  closeIfIsMobile() {
+    if (!this.isDesktopScreen) {
+      this.sidenavElement.close();
+    }
+  }
+
+  switchLang(lang: string) {
+    this.translate.use(lang);
+    localStorage.setItem('lang', lang);
+  }
+
+  toggleDarkTheme(checked: boolean) {
+    this.themeService.setDarkTheme(checked);
+    this.isDarkTheme = !this.isDarkTheme;
+  }
+
+}

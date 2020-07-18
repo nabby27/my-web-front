@@ -1,0 +1,42 @@
+.github-card {
+  height: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid #c0c0c0;
+}
+
+.github-card-header {
+  margin-left: -16px;
+}
+
+.github-card-content {
+  font-size: 1.2em;
+}
+
+.github-card-footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.github-footer-scores {
+  display: flex;
+  align-items: center;
+}
+
+.icon-score {
+  margin: 0 0.5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.icon-score__first {
+  margin: 0 0.5em 0 0;
+}
+
+.github-icon {
+  margin: 0 5px;
+}

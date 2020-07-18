@@ -1,0 +1,15 @@
+<section>
+  <div *ngIf="githubRepositories" class="projects-header">
+    <h1 class="github-username">{{githubUsername}}</h1> |
+    <h3 class="github-number-projects">{{numberOfGithubRepositories}} {{'projects' | translate}}</h3>
+  </div>
+  <ul *ngIf="githubRepositories" class="list-repositories">
+    <li *ngFor="let githubRepository of githubRepositories" class="list-repository-item">
+      <app-github-card [githubRepository]="githubRepository"></app-github-card>
+    </li>
+  </ul>
+
+  <div *ngIf="!githubRepositories" class="spinner-container">
+    <mat-progress-spinner color="accent" mode="indeterminate" diameter="50"></mat-progress-spinner>
+  </div>
+</section>

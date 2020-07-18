@@ -1,0 +1,48 @@
+/* mobile */
+.container {
+  min-height: 80vh;
+  overflow: hidden;
+}
+
+.home-text {
+  padding: 20px;
+  box-sizing: border-box;
+  font-weight: lighter;
+  text-align: center;
+  width: 100%;
+  display: block;
+  margin: 0 auto 0 auto;
+}
+
+.home-title {
+  font-weight: 500;
+  margin-top: 5vh;
+}
+
+.home-subtitle-1 {
+  margin-top: 25vh;
+}
+
+.home-subtitle-2 {
+  margin-top: 40vh;
+}
+
+/* tablet */
+@media screen and (min-width: 655px) {
+    .home-title {
+        margin-top: 20vh;
+    }
+
+    .home-subtitle-1 {
+        margin-top: 30vh;
+    }
+
+    .home-subtitle-2 {
+        margin-top: 39vh;
+    }
+}
+
+/* desktop */
+@media screen and (min-width: 1222px) {
+
+}

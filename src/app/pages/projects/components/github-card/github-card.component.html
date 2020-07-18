@@ -1,0 +1,39 @@
+<mat-card class="github-card">
+  <mat-card-header class="github-card-header">
+    <mat-card-title>{{githubRepository.name}}</mat-card-title>
+    <mat-card-subtitle>
+      <mat-chip-list *ngIf="githubRepository.language">
+        <!-- {{getColorForProgrammingLanguage(githubRepository.language)}} -->
+        <mat-chip [style.backgroundColor]="getColorForProgrammingLanguage(githubRepository.language)">
+          <!-- <mat-chip> -->
+          {{githubRepository.language}}
+        </mat-chip>
+      </mat-chip-list>
+    </mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content class="github-card-content">
+    <p>
+      {{githubRepository.description}}
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <hr>
+    <div class=" github-card-footer">
+      <div class="github-footer-scores">
+        <div class="icon-score icon-score__first">
+          <fa-icon class="github-icon" [icon]="['fas', 'star']"></fa-icon> {{githubRepository.stargazers_count}}
+        </div>
+        <div class="icon-score">
+          <fa-icon class="github-icon" [icon]="['fas', 'code-branch']"></fa-icon> {{githubRepository.forks_count}}
+        </div>
+        <div class="icon-score">
+          <fa-icon class="github-icon" [icon]="['fas', 'eye']"></fa-icon> {{githubRepository.watchers_count}}
+        </div>
+      </div>
+      <a mat-button [href]="githubRepository.html_url" target="_blank">
+        <span>{{'see more' | translate}}</span>
+        <fa-icon class="github-icon" [icon]="['fas', 'chevron-right']"></fa-icon>
+      </a>
+    </div>
+  </mat-card-actions>
+</mat-card>
