@@ -10,9 +10,9 @@
   <mat-card-content class="work-experience-card-content">
     <div *ngFor="let job of workExperience.jobs">
       <hr>
-      <h3 class="job-title">
+      <h1 class="job-title">
         {{job.title | translate}}
-      </h3>
+      </h1>
       <div class="job-description">
         <p *ngIf="job.description">
           {{job.description | translate}}
