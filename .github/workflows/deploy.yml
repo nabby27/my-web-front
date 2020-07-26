@@ -20,10 +20,8 @@ jobs:
       run: npm install
     - name: Run linter
       run: npm run lint
-    - name: Run app to test
-      run: npm run start
     - name: Run e2e test
-      run: npm run e2e
+      run: npm run start && npm run e2e
     - name: Build for ssr
       run: npm run build:ssr
     - name: Deploy to server
