@@ -21,7 +21,11 @@ jobs:
     - name: Run linter
       run: npm run lint
     - name: Run e2e test
-      run: npm run start && npm run e2e
+      uses: cypress-io/github-action@v2
+      with:
+        start: npm run start
+        wait-on: 'http://localhost:4200'
+        command: npm run e2e
     - name: Build for ssr
       run: npm run build:ssr
     - name: Deploy to server
