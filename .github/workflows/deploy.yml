@@ -26,6 +26,7 @@ jobs:
         start: npm run start
         wait-on: 'http://localhost:4200'
         command: npm run e2e
+        wait-on-timeout: 180
     - name: Build for ssr
       run: npm run build:ssr
     - name: Deploy to server
