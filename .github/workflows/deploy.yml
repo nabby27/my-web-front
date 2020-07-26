@@ -6,7 +6,7 @@ on:
       - master
 
 jobs:
-  build:
+  deploy:
 
     runs-on: ubuntu-18.04
 
@@ -16,8 +16,14 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: '13.11.x'
+    - name: Run linter
+      run: npm run lint
     - name: Install dependencies
       run: npm install
+    - name: Run app to test
+      run: npm run start
+    - name: Run e2e test
+      run: npm run e2e
     - name: Build for ssr
       run: npm run build:ssr
     - name: Deploy to server

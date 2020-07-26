@@ -1,7 +1,7 @@
 <div class="sidenav-container">
   <section class="sidenav-content">
     <nav class="sidenav-content-nav">
-      <mat-button-toggle-group class="menu-list" vertical="true">
+      <mat-button-toggle-group data-cy="sidenavMenu" class="menu-list" vertical="true">
         <mat-button-toggle *ngFor="let link of links" class="menu-item" mat-button [routerLink]="link.url"
           routerLinkActive="mat-button-toggle-checked" (click)="closeIfIsMobile()">
           {{link.text | translate}}
@@ -12,14 +12,14 @@
     <section class="sidenav-settings">
       <mat-form-field class="language-select" color="accent">
         <mat-label>{{'language' | translate}}</mat-label>
-        <mat-select #selectedLang (selectionChange)="switchLang(selectedLang.value)" [value]="translate.currentLang">
+        <mat-select #selectedLang data-cy="languageSelect" (selectionChange)="switchLang(selectedLang.value)" [value]="translate.currentLang">
           <mat-option *ngFor="let language of translate.getLangs()" [value]="language">
             {{ language }}
           </mat-option>
         </mat-select>
       </mat-form-field>
 
-      <mat-slide-toggle color="accent" (change)="toggleDarkTheme($event.checked)" [checked]="isDarkTheme" aria-label="change color theme">
+      <mat-slide-toggle data-cy="toggleDarkTheme" color="accent" (change)="toggleDarkTheme($event.checked)" [checked]="isDarkTheme" aria-label="change color theme">
         <fa-icon *ngIf="!isDarkTheme" class="theme-icon" [icon]="['fas', 'adjust']" size="lg" rotate="180"></fa-icon>
         <fa-icon *ngIf="isDarkTheme" class="theme-icon" [icon]="['fas', 'adjust']" size="lg"></fa-icon>
       </mat-slide-toggle>

@@ -2,7 +2,7 @@
   <app-header [sidenavElement]="sidenav"></app-header>
 
   <mat-sidenav-container class="container">
-    <mat-sidenav #sidenav class="sidenav" [mode]="isDesktopScreen ? 'side' : 'over'" fixedInViewport="true"
+    <mat-sidenav #sidenav data-cy="sidenav" class="sidenav" [mode]="isDesktopScreen ? 'side' : 'over'" fixedInViewport="true"
       [opened]="isDesktopScreen">
       <app-sidenav [sidenavElement]="sidenav" [isDesktopScreen]="isDesktopScreen"></app-sidenav>
     </mat-sidenav>
