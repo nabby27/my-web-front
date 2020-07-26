@@ -1,4 +1,5 @@
 export interface SocialNetwork {
+  id: string;
   url: string;
   iconPrefix: string;
   icon: string;

@@ -2,6 +2,7 @@ import { SocialNetwork } from 'src/app/shared/models/social-network';
 
 export const aboutMeSocialNetworks: SocialNetwork[] = [
     {
+        id: 'aboutMeSocialNetworkIconLinkdin',
         url: 'https://www.linkedin.com/in/ivancordobadonet/',
         iconPrefix: 'fab',
         icon: 'linkedin',
@@ -10,6 +11,7 @@ export const aboutMeSocialNetworks: SocialNetwork[] = [
         text: 'linkdin'
     },
     {
+        id: 'aboutMeSocialNetworkIconInstagram',
         url: 'https://www.instagram.com/ivancordoba_06/',
         iconPrefix: 'fab',
         icon: 'instagram',
@@ -18,6 +20,7 @@ export const aboutMeSocialNetworks: SocialNetwork[] = [
         text: 'instagram'
     },
     {
+        id: 'aboutMeSocialNetworkIconTwitter',
         url: 'https://twitter.com/IvanCordoba_06',
         iconPrefix: 'fab',
         icon: 'twitter',

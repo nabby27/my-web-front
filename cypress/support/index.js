@@ -14,7 +14,10 @@
 // ***********************************************************
 
 // Import commands.js using ES2015 syntax:
-import './commands'
+import './commands/appCommands';
+import './commands/languageCommands';
+import './commands/menuCommands';
+import './commands/themeCommands';
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')

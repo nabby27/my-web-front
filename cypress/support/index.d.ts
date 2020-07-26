@@ -3,6 +3,8 @@ declare namespace Cypress {
         isDarkThemeActive(): Chainable<Element>
         isLightThemeActive(): Chainable<Element>
         
+        clickToggleTheme(): Chainable<Element>
+
         isSpanishSelected(): Chainable<Element>
         isEnglishSelected(): Chainable<Element>
         isCatalanSelected(): Chainable<Element>
@@ -11,6 +13,11 @@ declare namespace Cypress {
         selectLanguageEnglish(): Chainable<Element>
         selectLanguageCatalan(): Chainable<Element>
 
+        isSidenavOpen(): Chainable<Element>
+        isSidenavClose(): Chainable<Element>
+        
+        clickToggleSidenav(): Chainable<Element>
+        
         clickOnHeaderName(): Chainable<Element>
         clickOnMenuHome(): Chainable<Element>
         clickOnMenuContact(): Chainable<Element>

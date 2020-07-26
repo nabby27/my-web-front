@@ -24,21 +24,46 @@ context('App', () => {
   });
 
   it('should remember language selected', () => {
-    cy.get('[data-cy=languageSelect]').click()
-      .get('mat-option').contains('ca').click();
+    cy.selectLanguageCatalan();
 
-    cy.visit('/');
+    cy.reload();
 
-    cy.get('[data-cy=languageSelect]').contains('ca');
-    cy.get('[data-cy=homeContainer]').contains('Benvingut/da a la meua pàgina web!');
+    cy.isCatalanSelected();
   });
 
   it('should remember theme selected', () => {
-    cy.get('[data-cy=toggleDarkTheme]').click();
+    cy.clickToggleTheme();
 
-    cy.visit('/');
+    cy.reload();
 
     cy.isLightThemeActive();
+  });
+
+  it('should toggle sidenav on click icon', () => {
+    cy.isSidenavOpen();
+
+    cy.clickToggleSidenav();
+    cy.isSidenavClose();
+
+    cy.clickToggleSidenav();
+    cy.isSidenavOpen();
+  });
+
+  it('should go to github profile when click on github icon', () => {
+    cy.get('[data-cy=headerSocialNetworkIconGithub]')
+      .should('have.attr', 'target', '_blank')
+      .should('have.attr', 'href', 'https://github.com/nabby27');
+  });
+
+  it('should go to stack overflow profile when click on stack overflow icon', () => {
+    cy.get('[data-cy=headerSocialNetworkIconStackOverflow]')
+      .should('have.attr', 'target', '_blank')
+      .should('have.attr', 'href', 'https://stackoverflow.com/users/11404854/nabby27');
+  });
+
+  it('should show current date on footer', () => {
+    cy.get('[data-cy=footer]')
+      .contains(new Date().getFullYear());
   });
 
 });
