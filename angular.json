@@ -81,7 +81,6 @@
           "options": {
             "main": "src/test.ts",
             "polyfills": "src/polyfills.ts",
-            "tsConfig": "src/tsconfig.spec.json",
             "karmaConfig": "src/karma.conf.js",
             "styles": [
               "node_modules/material-design-icons/iconfont/material-icons.css",
@@ -99,7 +98,7 @@
           "options": {
             "tsConfig": [
               "src/tsconfig.app.json",
-              "src/tsconfig.spec.json",
+              "cypress/tsconfig.json",
               "src/tsconfig.server.json"
             ],
             "exclude": [
@@ -176,7 +175,7 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": "e2e/tsconfig.e2e.json",
+            "tsConfig": "cypress/tsconfig.json",
             "exclude": [
               "**/node_modules/**"
             ]
