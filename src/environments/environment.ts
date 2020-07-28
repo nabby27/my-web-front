@@ -5,7 +5,8 @@
 export const environment = {
   production: false,
   name: 'dev',
-  apiUrl: 'http://localhost:443/api'
+  apiUrl: 'http://localhost:443/api',
+  buildedFolder: 'dist/my-web-front/browser'
 };
 
 /*

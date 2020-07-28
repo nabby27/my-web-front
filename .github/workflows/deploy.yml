@@ -20,15 +20,16 @@ jobs:
       run: npm install
     - name: Run linter
       run: npm run lint
-    - name: Run e2e test
+    - name: Build ssr for testing
+      run: npm run build:ssr:dev
+    - name: Run all test
       uses: cypress-io/github-action@v2
       with:
-        start: npm run start
+        start: npm run serve:ssr
         wait-on: 'http://localhost:4200'
         command: npm run test:all
-        wait-on-timeout: 180
-    - name: Build for ssr
-      run: npm run build:ssr
+    - name: Build ssr for production
+      run: npm run build:ssr:prod
     - name: Deploy to server
       uses: easingthemes/ssh-deploy@v2.1.1
       env:
