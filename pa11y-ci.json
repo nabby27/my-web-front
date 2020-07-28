@@ -2,6 +2,8 @@
   "defaults": {
     "timeout": 5000
   },
+  "includeWarnings": true,
+  "level": "warning",
   "urls": [
     "http://localhost:4200/home",
     "http://localhost:4200/education",
