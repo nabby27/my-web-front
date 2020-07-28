@@ -7,6 +7,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { MaterialModule } from '../../core/material/material.module';
 import { EducationComponent } from './education.component';
 import { AcademicTitleCardComponent } from './components/academic-title-card/academic-title-card.component';
+import { AcademicTitleContainerComponent } from './components/academic-title-container/academic-title-container.component';
 
 const routes: Routes = [
   {
@@ -18,6 +19,7 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     EducationComponent,
+    AcademicTitleContainerComponent,
     AcademicTitleCardComponent
   ],
   imports: [

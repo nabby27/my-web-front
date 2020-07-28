@@ -3,36 +3,12 @@
   padding: 10px;
 }
 
-.icon {
-  margin-right: 20px;
-}
-
-.list-academic-title {
-  padding: 0;
-  margin: 0;
-  list-style: none;
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  grid-auto-rows: 1fr;
-  grid-gap: 20px;
-}
-
-.academic-panel-title {
-  font-size: 1.2em;
-  margin-top: 15px;
-}
-
 /* tablet */
 @media screen and (min-width: 655px) {
   .education-container {
     padding: 40px;
   }
 
-  .list-academic-title {
-    margin: 40px;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 40px;
-  }
 }
 
 /* desktop */
@@ -41,7 +17,4 @@
     padding: 60px;
   }
 
-  .list-academic-title {
-    grid-template-columns: repeat(3, 1fr);
-  }
 }

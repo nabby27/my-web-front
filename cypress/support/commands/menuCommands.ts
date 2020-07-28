@@ -11,11 +11,21 @@ Cypress.Commands.add('clickToggleSidenav', () => {
 });
 
 Cypress.Commands.add('clickOnMenuHome', () => {
-  cy.get('[data-cy=sidenavMenu]')
-    .children().first().click();
+  cy.get('[data-cy=sidenavMenuElement]').eq(0).click();
+});
+
+Cypress.Commands.add('clickOnMenuEducation', () => {
+  clickOnMenuItem(1);
+});
+
+Cypress.Commands.add('clickOnMenuWorkExperience', () => {
+  clickOnMenuItem(2);
 });
 
 Cypress.Commands.add('clickOnMenuContact', () => {
-  cy.get('[data-cy=sidenavMenu]')
-    .children().last().click();
+  clickOnMenuItem(5);
 });
+
+const clickOnMenuItem = (position: number) => {
+  cy.get('[data-cy=sidenavMenuElement]').eq(position).click();
+};

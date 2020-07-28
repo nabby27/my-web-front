@@ -2,7 +2,7 @@
   <section class="sidenav-content">
     <nav class="sidenav-content-nav">
       <mat-button-toggle-group data-cy="sidenavMenu" class="menu-list" vertical="true">
-        <mat-button-toggle *ngFor="let link of links" class="menu-item" mat-button [routerLink]="link.url"
+        <mat-button-toggle data-cy="sidenavMenuElement" *ngFor="let link of links" class="menu-item" mat-button [routerLink]="link.url"
           routerLinkActive="mat-button-toggle-checked" (click)="closeIfIsMobile()">
           {{link.text | translate}}
         </mat-button-toggle>

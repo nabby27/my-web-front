@@ -12,7 +12,7 @@ import { AcademicTitle } from './models/academic-title';
 })
 export class EducationComponent {
 
-  academics_trainings: AcademicTitle[] = academicTraining;
+  academicsTrainings: AcademicTitle[] = academicTraining;
   courses: AcademicTitle[] = courses;
 
   constructor(

@@ -29,5 +29,5 @@ const isLanguageSelected = (language: string, expectedText: string) => {
 
 const selectLanguage = (language: string) => {
   cy.get('[data-cy=languageSelect]').click()
-      .get('mat-option').contains(language).click();
+    .get('mat-option').contains(language).click();
 };

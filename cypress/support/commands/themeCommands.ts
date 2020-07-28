@@ -9,5 +9,5 @@ Cypress.Commands.add('isLightThemeActive', () => {
 });
 
 Cypress.Commands.add('clickToggleTheme', () => {
-cy.get('[data-cy=toggleDarkTheme]').click();
+  cy.get('[data-cy=toggleDarkTheme]').click();
 });
