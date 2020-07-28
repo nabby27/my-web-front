@@ -1,0 +1,14 @@
+{
+  "defaults": {
+    "timeout": 5000
+  },
+  "urls": [
+    "http://localhost:4200/home",
+    "http://localhost:4200/education",
+    "http://localhost:4200/work-experience",
+    "http://localhost:4200/projects",
+    "http://localhost:4200/about-me",
+    "http://localhost:4200/contact"
+
+  ]
+}

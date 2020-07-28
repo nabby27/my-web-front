@@ -25,7 +25,7 @@ jobs:
       with:
         start: npm run start
         wait-on: 'http://localhost:4200'
-        command: npm run e2e
+        command: npm run test:all
         wait-on-timeout: 180
     - name: Build for ssr
       run: npm run build:ssr
