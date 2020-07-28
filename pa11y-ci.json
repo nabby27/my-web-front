@@ -1,6 +1,6 @@
 {
   "defaults": {
-    "timeout": 5000
+    "timeout": 10000
   },
   "includeWarnings": true,
   "level": "warning",
