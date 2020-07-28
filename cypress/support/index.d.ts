@@ -2,6 +2,9 @@ declare namespace Cypress {
     interface Chainable {
         checkGithubIconLink(): Chainable<Element>
         checkStackOverflowIconLink(): Chainable<Element>
+        checkLinkdinIconLink(): Chainable<Element>
+        checkInstagramIconLink(): Chainable<Element>
+        checkTwitterIconLink(): Chainable<Element>
 
         isDarkThemeActive(): Chainable<Element>
         isLightThemeActive(): Chainable<Element>
@@ -25,11 +28,17 @@ declare namespace Cypress {
         clickOnMenuHome(): Chainable<Element>
         clickOnMenuEducation(): Chainable<Element>
         clickOnMenuWorkExperience(): Chainable<Element>
+        clickOnMenuProjects(): Chainable<Element>
+        clickOnMenuAboutMe(): Chainable<Element>
         clickOnMenuContact(): Chainable<Element>
         
         isInHomePage(): Chainable<Element>
         isInEducationPage(): Chainable<Element>
         isInWorkExperiencePage(): Chainable<Element>
+        isInProjectsPage(): Chainable<Element>
+        isInAboutMePage(): Chainable<Element>
+        isInContactPage(): Chainable<Element>
+
 
         checkNumberOfAcademicTitles(): Chainable<Element>
         checkNumberOfCourses(): Chainable<Element>

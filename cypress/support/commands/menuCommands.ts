@@ -22,6 +22,14 @@ Cypress.Commands.add('clickOnMenuWorkExperience', () => {
   clickOnMenuItem(2);
 });
 
+Cypress.Commands.add('clickOnMenuProjects', () => {
+  clickOnMenuItem(3);
+});
+
+Cypress.Commands.add('clickOnMenuAboutMe', () => {
+  clickOnMenuItem(4);
+});
+
 Cypress.Commands.add('clickOnMenuContact', () => {
   clickOnMenuItem(5);
 });

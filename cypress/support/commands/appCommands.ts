@@ -40,12 +40,36 @@ Cypress.Commands.add('isInWorkExperiencePage', () => {
   isInPage('/work-experience', 2, 'workExperienceContainer', 'Green Urban Data');
 });
 
+Cypress.Commands.add('isInProjectsPage', () => {
+  isInPage('/projects', 3, 'projectsContainer', 'nabby27');
+});
+
+Cypress.Commands.add('isInAboutMePage', () => {
+  isInPage('/about-me', 4, 'aboutMeContainer', 'Me considero');
+});
+
+Cypress.Commands.add('isInContactPage', () => {
+  isInPage('/contact', 5, 'contactContainer', '¡Contáctame!');
+});
+
 Cypress.Commands.add('checkGithubIconLink', () => {
   checkIconLink('headerSocialNetworkIconGithub', 'https://github.com/nabby27');
 });
 
 Cypress.Commands.add('checkStackOverflowIconLink', () => {
   checkIconLink('headerSocialNetworkIconStackOverflow', 'https://stackoverflow.com/users/11404854/nabby27');
+});
+
+Cypress.Commands.add('checkLinkdinIconLink', () => {
+  checkIconLink('aboutMeSocialNetworkIconLinkdin', 'https://www.linkedin.com/in/ivancordobadonet/');
+});
+
+Cypress.Commands.add('checkInstagramIconLink', () => {
+  checkIconLink('aboutMeSocialNetworkIconInstagram', 'https://www.instagram.com/ivancordoba_06/');
+});
+
+Cypress.Commands.add('checkTwitterIconLink', () => {
+  checkIconLink('aboutMeSocialNetworkIconTwitter', 'https://twitter.com/IvanCordoba_06');
 });
 
 const isInPage = (url: string, menuPosition: number, containerPage: string, textOnPage: string) => {

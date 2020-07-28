@@ -18,6 +18,7 @@ import './commands/appCommands';
 import './commands/educationCommands';
 import './commands/languageCommands';
 import './commands/menuCommands';
+import './commands/projectsCommands';
 import './commands/themeCommands';
 import './commands/workExperienceCommands';
 

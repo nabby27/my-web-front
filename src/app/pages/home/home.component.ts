@@ -18,7 +18,8 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     if (isPlatformBrowser(this.platformId)) {
       const container = document.getElementById('container');
-      const parallax = new Parallax(container);
+      // tslint:disable-next-line: no-unused-expression
+      new Parallax(container);
     }
   }
 
