@@ -1,5 +1,5 @@
-<div class="snackbar accent" translate>
-  <i *ngIf="data.success" class="material-icons">check</i>
-  <i *ngIf="!data.success" class="material-icons">error_outline</i>
+<div class="snackbar accent" translate data-cy="snackBar">
+  <i *ngIf="data.success" data-cy="snackBarSuccesIcon" class="material-icons">check</i>
+  <i *ngIf="!data.success" data-cy="snackBarErrorIcon" class="material-icons">error_outline</i>
   {{data.message}}
 </div>

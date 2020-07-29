@@ -82,5 +82,11 @@ declare namespace Cypress {
 
         lostFocusOnInput(): Chainable<Element>;
 
+        isContactSubmitButtonDisabled(): Chainable<Element>;
+        isContactSubmitButtonEnabled(): Chainable<Element>;
+
+        clickContactSubmitButton(): Chainable<Element>;
+        isVisibleErrorSnackbar(): Chainable<Element>;
+        isVisibleSuccessSnackbar(): Chainable<Element>;
     }
   }

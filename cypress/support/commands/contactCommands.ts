@@ -102,6 +102,26 @@ Cypress.Commands.add('lostFocusOnInput', () => {
     cy.get('[data-cy=contactCard]').first().click();
 });
 
+Cypress.Commands.add('isContactSubmitButtonDisabled', () => {
+    checkContactButtonDisabled('be.disabled');
+});
+
+Cypress.Commands.add('isContactSubmitButtonEnabled', () => {
+    checkContactButtonDisabled('not.be.disabled');
+});
+
+Cypress.Commands.add('clickContactSubmitButton', () => {
+    cy.get('[data-cy=contactSubmitButton]').click();
+});
+
+Cypress.Commands.add('isVisibleErrorSnackbar', () => {
+    cy.get('[data-cy=snackBarErrorIcon]').should('be.visible');
+});
+
+Cypress.Commands.add('isVisibleSuccessSnackbar', () => {
+    cy.get('[data-cy=snackBarSuccesIcon]').should('be.visible');
+});
+
 const isNotShowingInputError = (errorAnchorId: string) => {
     checkInputErrorVisibility(errorAnchorId, 'not.visible');
 };
@@ -121,4 +141,8 @@ const addTextToInputBeforeClear = (inputAnchorId: string, textToInput: string) =
 
 const addTextToInput = (inputAnchorId: string, textToInput: string) => {
     cy.get(`[data-cy=${inputAnchorId}]`).type(textToInput);
+};
+
+const checkContactButtonDisabled = (disabledExpected: 'not.be.disabled' | 'be.disabled') => {
+    cy.get('[data-cy=contactSubmitButton]').should(disabledExpected);
 };

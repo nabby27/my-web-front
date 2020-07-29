@@ -27,7 +27,7 @@ context('Contact Page', () => {
   });
 
   it('should have disabled submit button when load page', () => {
-    cy.get('[data-cy=contactSubmitButton]').should('be.disabled');
+    cy.isContactSubmitButtonDisabled();
   });
 
   it('should show required error on name field', () => {
@@ -96,7 +96,21 @@ context('Contact Page', () => {
     cy.isNotShowingRequiredErrorOnInputMessage();
   });
 
-  // it('should have enabled submit button when form is success', () => {
-  // });
+  it('should have enabled submit button when form is success', () => {
+    cy.addTextToInputName();
+    cy.addValidEmailToInputEmail();
+    cy.addValidSumToInputSum();
+    cy.addValidMessageToInputMessage();
+    cy.isContactSubmitButtonEnabled();
+  });
+
+  it('should show error snackbar when submit form and not send mail', () => {
+    cy.addTextToInputName();
+    cy.addValidEmailToInputEmail();
+    cy.addValidSumToInputSum();
+    cy.addValidMessageToInputMessage();
+    cy.clickContactSubmitButton();
+    cy.isVisibleErrorSnackbar();
+  });
 
 });
