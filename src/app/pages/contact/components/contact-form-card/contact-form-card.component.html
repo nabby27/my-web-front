@@ -1,0 +1,57 @@
+<mat-card class="card">
+  <mat-card-content>
+    <form [formGroup]="contactForm" #contactFormDirective="ngForm" class="contact-form"
+      (ngSubmit)="sendMail(contactFormDirective)">
+      <div class="contact-form-field">
+        <mat-form-field>
+          <input matInput placeholder="{{'Name' | translate}}" formControlName="name">
+        </mat-form-field>
+        <mat-error *ngIf="name.touched && name.hasError('required')">
+          {{'I need to know your name' | translate}}
+        </mat-error>
+      </div>
+
+      <div class="contact-form-field">
+        <mat-form-field>
+          <input matInput placeholder="{{'E-mail' | translate}}" formControlName="email">
+        </mat-form-field>
+        <mat-error *ngIf="email.touched && email.hasError('email') && !email.hasError('required')">
+          {{'Please enter a valid email address' | translate}}
+        </mat-error>
+        <mat-error *ngIf="email.touched && email.hasError('required')">
+          {{'Maybe you want me to contact you' | translate}}
+        </mat-error>
+      </div>
+
+      <div class="contact-form-field">
+        <mat-form-field>
+          <input matInput type="number" placeholder="{{num1ToSum}} + {{num2ToSum}}" formControlName="sum">
+        </mat-form-field>
+        <mat-error *ngIf="sum.touched && sum.hasError('correctSum') && !sum.hasError('required')">
+          {{'The sum is not correct, maybe you are a robot!' | translate}}
+        </mat-error>
+        <mat-error *ngIf="sum.touched && sum.hasError('required')">
+          {{'It is required to avoid robots' | translate}}
+        </mat-error>
+      </div>
+
+      <div class="contact-form-field">
+        <mat-form-field>
+          <textarea matInput cdkTextareaAutosize #autosize="cdkTextareaAutosize"
+            placeholder="{{'Leave a message' | translate}}" formControlName="message"></textarea>
+        </mat-form-field>
+        <mat-error *ngIf="message.touched && message.hasError('required')">
+          {{'What do you want to tell me?' | translate}}
+        </mat-error>
+      </div>
+
+      <button class="contact-form-button" [disabled]="!contactForm.valid" mat-raised-button color="primary">
+        {{'Send me your message' | translate}}
+      </button>
+
+      <div *ngIf="isMailBeenSended" class="spinner-container">
+        <mat-progress-spinner color="accent" mode="indeterminate" diameter="50"></mat-progress-spinner>
+      </div>
+    </form>
+  </mat-card-content>
+</mat-card>

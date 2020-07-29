@@ -1,0 +1,76 @@
+/************************************** start reset number input style **************************************/
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance:textfield;
+}
+/************************************** end reset number input style **************************************/
+
+/* mobile */
+.card {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.contact-form {
+  padding: 10px;
+}
+
+.contact-form-field {
+  width: 100%;
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+.contact-form-button {
+  width: 100%;
+  margin-top: 50px;
+  font-size: 18px;
+}
+
+.spinner-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+/* tablet */
+@media screen and (min-width: 655px) {
+  .contact-form {
+    padding: 15px;
+  }
+}
+
+/* desktop */
+@media screen and (min-width: 1222px) {
+  .contact-form {
+    padding: 10px 40px;
+  }
+
+  .contact-form-field {
+    width: 100%;
+    margin-top: 35px;
+    font-size: 18px;
+  }
+
+  mat-form-field {
+    width: 100%;
+  }
+
+  .contact-form-button {
+    width: 100%;
+    margin-top: 50px;
+    font-size: 18px;
+  }
+
+}

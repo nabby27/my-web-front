@@ -1,13 +1,16 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
+
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { TranslateModule } from '@ngx-translate/core';
 
-import { ContactComponent } from './contact.component';
 import { MaterialModule } from '../../core/material/material.module';
+import { ContactComponent } from './contact.component';
+import { ContactInfoCardComponent } from './components/contact-info-card/contact-info-card.component';
+import { ContactFormCardComponent } from './components/contact-form-card/contact-form-card.component';
 import { SnackbarComponent } from './components/snackbar/snackbar.component';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 const routes: Routes = [
   {
@@ -19,6 +22,8 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     ContactComponent,
+    ContactInfoCardComponent,
+    ContactFormCardComponent,
     SnackbarComponent
   ],
   imports: [
