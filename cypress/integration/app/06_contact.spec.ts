@@ -1,4 +1,4 @@
-context.only('Contact Page', () => {
+context('Contact Page', () => {
   beforeEach(() => {
     cy.visit('/contact');
   });
