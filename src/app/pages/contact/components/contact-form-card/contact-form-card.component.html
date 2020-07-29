@@ -4,48 +4,54 @@
       (ngSubmit)="sendMail(contactFormDirective)">
       <div class="contact-form-field">
         <mat-form-field>
-          <input matInput placeholder="{{'Name' | translate}}" formControlName="name">
+          <input matInput data-cy="contactFieldNameInput" placeholder="{{'Name' | translate}}" formControlName="name">
         </mat-form-field>
-        <mat-error *ngIf="name.touched && name.hasError('required')">
+        <mat-error *ngIf="name.touched && name.hasError('required')"
+          data-cy="contactFieldNameRequiredError">
           {{'I need to know your name' | translate}}
         </mat-error>
       </div>
 
       <div class="contact-form-field">
         <mat-form-field>
-          <input matInput placeholder="{{'E-mail' | translate}}" formControlName="email">
+          <input matInput data-cy="contactFieldEmailInput" placeholder="{{'E-mail' | translate}}" formControlName="email">
         </mat-form-field>
-        <mat-error *ngIf="email.touched && email.hasError('email') && !email.hasError('required')">
+        <mat-error *ngIf="email.touched && email.hasError('email') && !email.hasError('required')"
+          data-cy="contactFieldEmailInvalidError">
           {{'Please enter a valid email address' | translate}}
         </mat-error>
-        <mat-error *ngIf="email.touched && email.hasError('required')">
+        <mat-error *ngIf="email.touched && email.hasError('required')"
+          data-cy="contactFieldEmailRequiredError">
           {{'Maybe you want me to contact you' | translate}}
         </mat-error>
       </div>
 
       <div class="contact-form-field">
         <mat-form-field>
-          <input matInput type="number" placeholder="{{num1ToSum}} + {{num2ToSum}}" formControlName="sum">
+          <input matInput data-cy="contactFieldSumInput" type="number" placeholder="{{num1ToSum}} + {{num2ToSum}}" formControlName="sum">
         </mat-form-field>
-        <mat-error *ngIf="sum.touched && sum.hasError('correctSum') && !sum.hasError('required')">
+        <mat-error *ngIf="sum.touched && sum.hasError('correctSum') && !sum.hasError('required')"
+          data-cy="contactFieldSumInvalidError">
           {{'The sum is not correct, maybe you are a robot!' | translate}}
         </mat-error>
-        <mat-error *ngIf="sum.touched && sum.hasError('required')">
+        <mat-error *ngIf="sum.touched && sum.hasError('required')"
+          data-cy="contactFieldSumRequiredError">
           {{'It is required to avoid robots' | translate}}
         </mat-error>
       </div>
 
       <div class="contact-form-field">
         <mat-form-field>
-          <textarea matInput cdkTextareaAutosize #autosize="cdkTextareaAutosize"
+          <textarea matInput cdkTextareaAutosize data-cy="contactFieldMessajeInput" #autosize="cdkTextareaAutosize"
             placeholder="{{'Leave a message' | translate}}" formControlName="message"></textarea>
         </mat-form-field>
-        <mat-error *ngIf="message.touched && message.hasError('required')">
+        <mat-error *ngIf="message.touched && message.hasError('required')"
+          data-cy="contactFieldMessajeRequiredError">
           {{'What do you want to tell me?' | translate}}
         </mat-error>
       </div>
 
-      <button class="contact-form-button" [disabled]="!contactForm.valid" mat-raised-button color="primary">
+      <button class="contact-form-button" data-cy="contactSubmitButton" [disabled]="!contactForm.valid" mat-raised-button color="primary">
         {{'Send me your message' | translate}}
       </button>
 

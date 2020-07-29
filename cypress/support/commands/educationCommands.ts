@@ -48,7 +48,7 @@ const isPanelNotVisible = (numberPanel: number) => {
   checkPanelVisibility(numberPanel, 'not.visible');
 };
 
-const checkPanelVisibility = (numberPanel: number, visible: string) => {
+const checkPanelVisibility = (numberPanel: number, visible: 'visible' | 'not.visible') => {
   cy.get('[data-cy=academicTitlesContainer]').eq(numberPanel)
     .find('[data-cy=academicTitlesContainerContent]').should(visible);
 };

@@ -15,10 +15,10 @@
 
 // Import commands.js using ES2015 syntax:
 import './commands/appCommands';
+import './commands/contactCommands';
 import './commands/educationCommands';
 import './commands/languageCommands';
 import './commands/menuCommands';
-import './commands/projectsCommands';
 import './commands/themeCommands';
 import './commands/workExperienceCommands';
 

@@ -52,5 +52,26 @@ declare namespace Cypress {
         isCoursesPanelOpened(): Chainable<Element>;
 
         checkNumberOfWorkExperience(): Chainable<Element>;
+        haveTwoContactCards(): Chainable<Element>;
+
+        isNotShowingRequiredErrorOnInputName(): Chainable<Element>;
+        isNotShowingRequiredErrorOnInputEmail(): Chainable<Element>;
+        isNotShowingInvalidErrorOnInputEmail(): Chainable<Element>;
+        isNotShowingRequiredErrorOnInputSum(): Chainable<Element>;
+        isNotShowingInvalidErrorOnInputSum(): Chainable<Element>;
+        isNotShowingRequiredErrorOnInputMessage(): Chainable<Element>;
+
+        isShowingRequiredErrorOnInputName(): Chainable<Element>;
+        isShowingRequiredErrorOnInputEmail(): Chainable<Element>;
+        isShowingInvalidErrorOnInputEmail(): Chainable<Element>;
+        isShowingRequiredErrorOnInputSum(): Chainable<Element>;
+        isShowingInvalidErrorOnInputSum(): Chainable<Element>;
+        isShowingRequiredErrorOnInputMessage(): Chainable<Element>;
+
+        addTextToInputNameBeforeClear(): Chainable<Element>;
+        addTextToInputEmailBeforeClear(): Chainable<Element>;
+        addInvalidEmailToInputEmail(): Chainable<Element>;
+        lostFocusOnInput(): Chainable<Element>;
+
     }
   }
