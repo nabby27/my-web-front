@@ -71,6 +71,15 @@ declare namespace Cypress {
         addTextToInputNameBeforeClear(): Chainable<Element>;
         addTextToInputEmailBeforeClear(): Chainable<Element>;
         addInvalidEmailToInputEmail(): Chainable<Element>;
+        addTextToInputSumBeforeClear(): Chainable<Element>;
+        addInvalidSumToInputSum(): Chainable<Element>;
+        addTextToInputMessageBeforeClear(): Chainable<Element>;
+        
+        addTextToInputName(): Chainable<Element>;
+        addValidEmailToInputEmail(): Chainable<Element>;
+        addValidSumToInputSum(): Chainable<Element>;
+        addValidMessageToInputMessage(): Chainable<Element>;
+
         lostFocusOnInput(): Chainable<Element>;
 
     }

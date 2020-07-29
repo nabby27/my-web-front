@@ -3,11 +3,11 @@ context('About Me Page', () => {
     cy.visit('/about-me');
   });
 
-  it('should be go to about me page', () => {
+  it('should go to about me page', () => {
     cy.isInAboutMePage();
   });
 
-  it('should be go to about me page when click on menu', () => {
+  it('should go to about me page when click on menu', () => {
     cy.clickOnMenuContact();
     cy.clickOnMenuAboutMe();
     cy.isInAboutMePage();

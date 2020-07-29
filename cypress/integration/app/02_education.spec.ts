@@ -3,32 +3,32 @@ context('Education Page', () => {
     cy.visit('/education');
   });
 
-  it('should be go to education page', () => {
+  it('should go to education page', () => {
     cy.isInEducationPage();
   });
 
-  it('should be go to education page when click on menu', () => {
+  it('should go to education page when click on menu', () => {
     cy.clickOnMenuContact();
     cy.clickOnMenuEducation();
     cy.isInEducationPage();
   });
 
-  it('should be have 3 academc titles', () => {
+  it('should have 3 academc titles', () => {
     cy.checkNumberOfAcademicTitles();
   });
 
-  it('should be have 6 courses', () => {
+  it('should have 6 courses', () => {
     cy.checkNumberOfCourses();
   });
 
-  it('should be close/open academic titles panel', () => {
+  it('should close/open academic titles panel', () => {
     cy.clickAcademicTitleHeader();
     cy.isAcademicTitlePanelClosed();
     cy.clickAcademicTitleHeader();
     cy.isAcademicTitlePanelOpened();
   });
 
-  it('should be close/open courses panel', () => {
+  it('should close/open courses panel', () => {
     cy.clickCoursesHeader();
     cy.isCoursesPanelClosed();
     cy.clickCoursesHeader();

@@ -62,6 +62,42 @@ Cypress.Commands.add('addInvalidEmailToInputEmail', () => {
     addTextToInput('contactFieldEmailInput', 'nabby27');
 });
 
+Cypress.Commands.add('addTextToInputSumBeforeClear', () => {
+    addTextToInputBeforeClear('contactFieldSumInput', '1');
+});
+
+Cypress.Commands.add('addInvalidSumToInputSum', () => {
+    let sum = 10;
+    cy.get('[data-cy=contactFieldSumRandomNumbers]').children().each((element: JQuery<HTMLElement>) => {
+        sum += parseInt(element.text(), 10);
+    })
+    .then(() => addTextToInput('contactFieldSumInput', sum.toString()));
+});
+
+Cypress.Commands.add('addTextToInputMessageBeforeClear', () => {
+    addTextToInputBeforeClear('contactFieldMessageInput', 'nabby27');
+});
+
+Cypress.Commands.add('addTextToInputName', () => {
+    addTextToInput('contactFieldNameInput', 'nabby27');
+});
+
+Cypress.Commands.add('addValidEmailToInputEmail', () => {
+    addTextToInput('contactFieldEmailInput', 'nabby27@example.com');
+});
+
+Cypress.Commands.add('addValidSumToInputSum', () => {
+    let sum = 0;
+    cy.get('[data-cy=contactFieldSumRandomNumbers]').children().each((element: JQuery<HTMLElement>) => {
+        sum += parseInt(element.text(), 10);
+    })
+    .then(() => addTextToInput('contactFieldSumInput', sum.toString()));
+});
+
+Cypress.Commands.add('addValidMessageToInputMessage', () => {
+    addTextToInput('contactFieldMessageInput', 'Say hello!');
+});
+
 Cypress.Commands.add('lostFocusOnInput', () => {
     cy.get('[data-cy=contactCard]').first().click();
 });

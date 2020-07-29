@@ -27,6 +27,10 @@
       </div>
 
       <div class="contact-form-field">
+        <span [hidden]="true" data-cy="contactFieldSumRandomNumbers">
+          <span>{{num1ToSum}}</span>
+          <span>{{num2ToSum}}</span>
+        </span>
         <mat-form-field>
           <input matInput data-cy="contactFieldSumInput" type="number" placeholder="{{num1ToSum}} + {{num2ToSum}}" formControlName="sum">
         </mat-form-field>
@@ -42,11 +46,11 @@
 
       <div class="contact-form-field">
         <mat-form-field>
-          <textarea matInput cdkTextareaAutosize data-cy="contactFieldMessajeInput" #autosize="cdkTextareaAutosize"
+          <textarea matInput cdkTextareaAutosize data-cy="contactFieldMessageInput" #autosize="cdkTextareaAutosize"
             placeholder="{{'Leave a message' | translate}}" formControlName="message"></textarea>
         </mat-form-field>
         <mat-error *ngIf="message.touched && message.hasError('required')"
-          data-cy="contactFieldMessajeRequiredError">
+          data-cy="contactFieldMessageRequiredError">
           {{'What do you want to tell me?' | translate}}
         </mat-error>
       </div>
