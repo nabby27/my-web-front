@@ -3,8 +3,11 @@ import { ScreenService } from './services/screen.service';
 import { TranslateService } from '@ngx-translate/core';
 import { ThemeService } from './services/theme.service';
 import { Observable } from 'rxjs';
-import { Router, NavigationEnd } from '@angular/router';
+import { Router, NavigationEnd, Event } from '@angular/router';
 import { isPlatformBrowser } from '@angular/common';
+import { filter } from 'rxjs/operators';
+
+declare var gtag: any;
 
 @Component({
   selector: 'app-root',
@@ -15,6 +18,8 @@ export class AppComponent implements OnInit {
 
   isDesktopScreen: boolean;
   isDarkTheme: Observable<boolean>;
+
+  navigationEnd: Observable<Event>;
 
   constructor(
     @Inject(PLATFORM_ID) private platformId: object,
@@ -28,7 +33,9 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.checkScreenSize();
+    this.navigationEnd = this.router.events.pipe(filter(event => event instanceof NavigationEnd));
     this.goTopWhenComponentChange();
+    this.trackingNavigationOnGoogleAnalytics();
     this.setDefaultConfig();
   }
 
@@ -43,13 +50,18 @@ export class AppComponent implements OnInit {
   }
 
   goTopWhenComponentChange = () => {
-    this.router.events.subscribe((evt) => {
-      if (!(evt instanceof NavigationEnd)) {
-        return;
-      }
+    this.navigationEnd.subscribe(() => {
       if (isPlatformBrowser(this.platformId)) {
         window.scrollTo(0, 0);
       }
+    });
+  }
+
+  trackingNavigationOnGoogleAnalytics = () => {
+    this.navigationEnd.subscribe((event: NavigationEnd) => {
+        gtag('config', 'UA-156632619-1', {
+          'page_path': event.urlAfterRedirects
+        });
     });
   }
 
