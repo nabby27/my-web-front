@@ -59,9 +59,11 @@ export class AppComponent implements OnInit {
 
   trackingNavigationOnGoogleAnalytics = () => {
     this.navigationEnd.subscribe((event: NavigationEnd) => {
-        gtag('config', 'UA-156632619-1', {
-          'page_path': event.urlAfterRedirects
-        });
+      if (isPlatformBrowser(this.platformId)) {
+          gtag('config', 'UA-156632619-1', {
+            'page_path': event.urlAfterRedirects
+          });
+        }
     });
   }
 
