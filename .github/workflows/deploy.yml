@@ -39,3 +39,11 @@ jobs:
           REMOTE_HOST: ${{ secrets.SERVER_HOST }}
           REMOTE_USER: ${{ secrets.SERVER_USER }}
           TARGET: ${{ secrets.SERVER_TARGET_FOLDER }}
+    - name: Reload pm2 server
+      uses: fifsky/ssh-action@master
+      with:
+        command: |
+          pm2 restart 0
+        host: ${{ secrets.SERVER_HOST }}
+        user: ${{ secrets.SERVER_USER }}
+        key: ${{ secrets.SERVER_SSH_KEY}}

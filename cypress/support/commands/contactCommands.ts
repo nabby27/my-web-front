@@ -122,6 +122,26 @@ Cypress.Commands.add('isVisibleSuccessSnackbar', () => {
     cy.get('[data-cy=snackBarSuccesIcon]').should('be.visible');
 });
 
+Cypress.Commands.add('fillAndSendContactForm', () => {
+    cy.addTextToInputName();
+    cy.addValidEmailToInputEmail();
+    cy.addValidSumToInputSum();
+    cy.addValidMessageToInputMessage();
+    cy.clickContactSubmitButton();
+});
+
+Cypress.Commands.add('mockFailResponseWhenSendMail', () => {
+    mockResponseWhenSendMail(400, false);
+});
+
+Cypress.Commands.add('mockSuccessResponseWhenSendMail', () => {
+    mockResponseWhenSendMail(200, true);
+});
+
+Cypress.Commands.add('waitMockResponseOnSendMail', () => {
+    cy.wait('@sendMail');
+});
+
 const isNotShowingInputError = (errorAnchorId: string) => {
     checkInputErrorVisibility(errorAnchorId, 'not.visible');
 };
@@ -145,4 +165,14 @@ const addTextToInput = (inputAnchorId: string, textToInput: string) => {
 
 const checkContactButtonDisabled = (disabledExpected: 'not.be.disabled' | 'be.disabled') => {
     cy.get('[data-cy=contactSubmitButton]').should(disabledExpected);
+};
+
+const mockResponseWhenSendMail = (status: number, response?: any) => {
+    cy.server();
+    cy.route({
+      method: 'POST',
+      url: '/api/sendMail',
+      response,
+      status
+    }).as('sendMail');
 };

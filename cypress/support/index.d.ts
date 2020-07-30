@@ -88,5 +88,12 @@ declare namespace Cypress {
         clickContactSubmitButton(): Chainable<Element>;
         isVisibleErrorSnackbar(): Chainable<Element>;
         isVisibleSuccessSnackbar(): Chainable<Element>;
+
+        fillAndSendContactForm(): Chainable<Element>;
+
+        mockFailResponseWhenSendMail(): Chainable<Element>;
+        mockSuccessResponseWhenSendMail(): Chainable<Element>;
+        waitMockResponseOnSendMail(): Chainable<Element>;
+
     }
   }

@@ -1,4 +1,4 @@
-context('Contact Page', () => {
+context.only('Contact Page', () => {
   beforeEach(() => {
     cy.visit('/contact');
   });
@@ -105,12 +105,17 @@ context('Contact Page', () => {
   });
 
   it('should show error snackbar when submit form and not send mail', () => {
-    cy.addTextToInputName();
-    cy.addValidEmailToInputEmail();
-    cy.addValidSumToInputSum();
-    cy.addValidMessageToInputMessage();
-    cy.clickContactSubmitButton();
+    cy.mockFailResponseWhenSendMail();
+    cy.fillAndSendContactForm();
+    cy.waitMockResponseOnSendMail();
     cy.isVisibleErrorSnackbar();
+  });
+
+  it('should show succes snackbar when submit form and send mail', () => {
+    cy.mockSuccessResponseWhenSendMail();
+    cy.fillAndSendContactForm();
+    cy.waitMockResponseOnSendMail();
+    cy.isVisibleSuccessSnackbar();
   });
 
 });
