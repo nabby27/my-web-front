@@ -6,6 +6,7 @@ import { Observable } from 'rxjs';
 import { Router, NavigationEnd, Event } from '@angular/router';
 import { isPlatformBrowser } from '@angular/common';
 import { filter } from 'rxjs/operators';
+import { environment } from 'src/environments/environment';
 
 declare var gtag: any;
 
@@ -59,7 +60,7 @@ export class AppComponent implements OnInit {
 
   trackingNavigationOnGoogleAnalytics = () => {
     this.navigationEnd.subscribe((event: NavigationEnd) => {
-      if (isPlatformBrowser(this.platformId)) {
+      if (isPlatformBrowser(this.platformId) && environment.production) {
           gtag('config', 'UA-156632619-1', {
             'page_path': event.urlAfterRedirects
           });
