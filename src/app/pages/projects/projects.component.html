@@ -1,4 +1,4 @@
-<section data-cy="projectsContainer">
+<main data-cy="projectsContainer">
   <div *ngIf="githubRepositories" class="projects-header">
     <h1 class="github-username">{{githubUsername}}</h1> |
     <h2 class="github-number-projects">{{numberOfGithubRepositories}} {{'projects' | translate}}</h2>
@@ -12,4 +12,4 @@
   <div *ngIf="!githubRepositories" class="spinner-container">
     <mat-progress-spinner data-cy="spinner" color="accent" mode="indeterminate" diameter="50"></mat-progress-spinner>
   </div>
-</section>
+</main>

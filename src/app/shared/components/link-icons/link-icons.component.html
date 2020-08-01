@@ -1,4 +1,4 @@
-<div>
+<section>
   <ul class="link-icon-list">
     <li class="link-icon-item" *ngFor="let linkIcon of linkIcons">
       <a mat-icon-button [attr.data-cy]="linkIcon.id" [href]="linkIcon.url" target="_blank" rel="noopener noreferrer" [style.color]="linkIcon.color" [attr.aria-label]="linkIcon.text">
@@ -6,4 +6,4 @@
       </a>
     </li>
   </ul>
-</div>
+</section>
