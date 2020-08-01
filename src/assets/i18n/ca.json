@@ -67,5 +67,7 @@
   "ABOUT_ME_DESCRIPTION": "Em considere una persona treballadora i eficaç. Vaig estudiar administració de sistemes i desenvolupament web, pel que puc fer qualsevol tipus de tasques, m'encanta la programació i m'agrada aprendre sempre les últimes tecnologies. Crec que un bon treball no és només que funcione, sinó que des de dins estiga ben estructurat, siga eficient i per descomptat escalable i sense errors. Els llenguatges que més use són Javascript amb Angular, PHP amb Laravel i JAVA junt a Spring i Hibernate, i pel que fa a les base de dades he utilitzat MySql, PostgreSQL i SQLite, i tinc experiència en AWS. Tot això junt a bones pràctiques de desenvolupament, coneixements d'arquitectura hexagonal i testing fa que es puga desenvolupar de forma segura i amb integració contínua sense problemes.",
   "ABOUT_ME_HOBBIES": "Pel que fa a les meues aficions m'agraden els esports (sobretot el bàsquet), els videojocs, els jocs de taula i els animals; sempre que puc intente anar a la naturalesa i poder relaxar-me.",
   "SUCCESS_SEND_MAIL": "S'ha enviat correctament",
-  "ERROR_SEND_MAIL": "No s'ha pogut enviar"
+  "ERROR_SEND_MAIL": "No s'ha pogut enviar",
+  "PRIVACY_POLICY_TITLE": "Política de privacitat",
+  "PRIVACY_AND_COOKIE_POLICY": "Política de privacitat y cookies"
 }

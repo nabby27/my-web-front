@@ -27,6 +27,10 @@ const routes: Routes = [
     loadChildren: () => import('./pages/contact/contact.module').then(m => m.ContactModule)
   },
   {
+    path: 'privacy-policy',
+    loadChildren: () => import('./pages/privacy-policy/privacy-policy.module').then(m => m.PrivacyPolicyModule)
+  },
+  {
     path: '',
     redirectTo: '/home',
     pathMatch: 'full'

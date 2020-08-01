@@ -1,10 +1,32 @@
+/* mobile */
 .footer {
   position: relative;
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-end;
+  justify-content: space-between;
 }
 
-.footer-text {
+.empty-space {
+  display: none;
+}
+
+.privacy-policy {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.footer-copyright {
   color: black;
+}
+
+/* tablet */
+@media screen and (min-width: 655px) {
+  .empty-space {
+    display: inline;
+  }
+}
+
+/* desktop */
+@media screen and (min-width: 1222px) {
 }

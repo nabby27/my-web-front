@@ -67,5 +67,7 @@
   "ABOUT_ME_DESCRIPTION": "I consider myself a hardworking and effective person. I studied systems administration and web development, so I can do any type of tasks, I love programming and I always like to learn the latest technologies. I believe that a good job is not only that it works, but that from the inside it is well structured, efficient and of course scalable and without failures. The languages I use the most are Javascript with Angular, PHP with Laravel and JAVA along with Spring and Hibernate, as for the databases I have used MySql, PostgreSQL and SQLite, and I have experience in AWS. All this together with good development practices, Hexagonal architecture and testing knowledge makes it possible to develop safely and with continuous integration without problems.",
   "ABOUT_ME_HOBBIES": "As for my hobbies I like sports (especially basketball), video games, board games and animals; whenever I can I try to go to nature and relax.",
   "SUCCESS_SEND_MAIL": "It has been sent successfully",
-  "ERROR_SEND_MAIL": "Could not send"
+  "ERROR_SEND_MAIL": "Could not send",
+  "PRIVACY_POLICY_TITLE": "Privacy policy",
+  "PRIVACY_AND_COOKIE_POLICY": "Privacy and cookies policy"
 }

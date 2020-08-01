@@ -68,5 +68,7 @@
   "ABOUT_ME_DESCRIPTION": "Me considero una persona trabajadora y eficaz. Estudié administración de sistemas y desarrollo web, por lo que puedo hacer cualquier tipo de tareas, me encanta la programación y me gusta aprender siempre las últimas tecnologías. Creo que un buen trabajo no es solo que funcione, sino que desde dentro esté bien estructurado, sea eficiente y por supuesto escalable y sin fallos. Los lenguajes que más uso son JavaScript con Angular, PHP con Laravel y JAVA junto a Spring e Hibernate, y en cuanto a las base de datos he utilizado MySql, PostgreSQL y SQLite, y tengo experiencia en AWS. Todo esto junto a buenas prácticas de desarrollo, conocimientos de arquitectura hexagonal y testing hace que se pueda desarrollar de forma segura y con integración continua sin problemas.",
   "ABOUT_ME_HOBBIES": "En cuanto a mis hobbies me gustan los deportes (sobre todo el baloncesto), los videojuegos, los juegos de mesa y los animales; siempre que puedo intento ir a la naturaleza y poder relajarme.",
   "SUCCESS_SEND_MAIL": "Se ha enviado correctamente",
-  "ERROR_SEND_MAIL": "No se ha podido enviar"
+  "ERROR_SEND_MAIL": "No se ha podido enviar",
+  "PRIVACY_POLICY_TITLE": "Política de privacidad",
+  "PRIVACY_AND_COOKIE_POLICY": "Política de privacidad y cookies"
 }

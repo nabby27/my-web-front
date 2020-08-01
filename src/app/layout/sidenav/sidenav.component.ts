@@ -4,6 +4,7 @@ import { FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import { faAdjust } from '@fortawesome/free-solid-svg-icons';
 import { ThemeService } from 'src/app/services/theme.service';
 import { isPlatformBrowser } from '@angular/common';
+import { MatSidenav } from '@angular/material/sidenav';
 
 @Component({
   selector: 'app-sidenav',
@@ -12,10 +13,10 @@ import { isPlatformBrowser } from '@angular/common';
 })
 export class SidenavComponent implements OnInit {
 
-  @Input() sidenavElement;
-  @Input() isDesktopScreen;
+  @Input() sidenavElement: MatSidenav;
+  @Input() isDesktopScreen: boolean;
 
-  isDarkTheme;
+  isDarkTheme: boolean;
 
   links = [
     { text: 'HOME', url: '/home' },

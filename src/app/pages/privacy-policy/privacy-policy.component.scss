@@ -1,0 +1,49 @@
+* {
+  line-height: 1.8em;
+}
+
+/* mobile */
+.container {
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-gap: 20px;
+}
+
+.title {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  font-size: calc(20px + 0.2vw);
+  letter-spacing: 0.15em;
+}
+
+.card {
+  font-size: 18px;
+  line-height: 1.5em;
+  padding: 20px;
+}
+
+/* tablet */
+@media screen and (min-width: 655px) {
+  .container {
+    padding: 40px;
+    grid-gap: 40px;
+  }
+
+  .card {
+    padding: 40px;
+  }
+}
+
+/* desktop */
+@media screen and (min-width: 1222px) {
+  .container {
+    padding: 60px;
+    grid-gap: 60px;
+  }
+
+  .card {
+    padding: 60px;
+  }
+}
