@@ -6,16 +6,20 @@ on:
       - master
 
 jobs:
-  deploy:
-
+  test:
+    
     runs-on: ubuntu-18.04
+
+    strategy:
+      matrix:
+        node-version: [13.11.x, 14.x]
 
     steps:
     - uses: actions/checkout@v2
-    - name: Install Node.js
+    - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
       with:
-        node-version: '13.11.x'
+        node-version: ${{ matrix.node-version }}
     - name: Install dependencies
       run: npm install
     - name: Run linter
@@ -25,9 +29,24 @@ jobs:
     - name: Run all test
       uses: cypress-io/github-action@v2
       with:
+        headless: true
+        parallel: true
         start: npm run serve:ssr
         wait-on: 'http://localhost:4200'
         command: npm run test:all
+
+  deploy:
+    needs: [test]
+    runs-on: ubuntu-18.04
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js
+      uses: actions/setup-node@v1
+      with:
+        node-version: '13.11.x'
+    - name: Install dependencies
+      run: npm install
     - name: Build ssr for production
       run: npm run build:ssr:prod
     - name: Deploy to server
