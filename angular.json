@@ -124,17 +124,6 @@
               ],
               "sourceMap": false,
               "optimization": true
-            },
-            "ci": {
-              "outputHashing": "media",
-              "fileReplacements": [
-                {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.ci.ts"
-                }
-              ],
-              "sourceMap": false,
-              "optimization": true
             }
           }
         },
