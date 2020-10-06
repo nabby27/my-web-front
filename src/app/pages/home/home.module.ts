@@ -7,21 +7,13 @@ import { TranslateModule } from '@ngx-translate/core';
 const routes: Routes = [
   {
     path: '',
-    component: HomeComponent
-  }
+    component: HomeComponent,
+  },
 ];
 
 @NgModule({
-  declarations: [
-    HomeComponent
-  ],
-  imports: [
-    CommonModule,
-    RouterModule.forChild(routes),
-    TranslateModule
-  ],
-  exports: [
-    RouterModule
-  ]
+  declarations: [HomeComponent],
+  imports: [CommonModule, RouterModule.forChild(routes), TranslateModule],
+  exports: [RouterModule],
 })
-export class HomeModule { }
+export class HomeModule {}

@@ -12,5 +12,4 @@ context('Projects Page', () => {
     cy.clickOnMenuProjects();
     cy.isInProjectsPage();
   });
-
 });

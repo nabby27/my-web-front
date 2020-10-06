@@ -16,5 +16,4 @@ context('Work Experience Page', () => {
   it('should have 2 companies on work experience', () => {
     cy.checkNumberOfWorkExperience();
   });
-
 });

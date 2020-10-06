@@ -1,41 +1,40 @@
 /* mobile */
 .work-experience-card {
-    padding: 20px;
+  padding: 20px;
 }
 
 .work-experience-card-title {
-    margin-left: -16px;
+  margin-left: -16px;
 }
 
 .work-experience-card-title-company {
-    font-weight: 500;
+  font-weight: 500;
 }
 
 .work-experience-card-content {
-    font-size: calc(18px + 0.1vw);
-    line-height: 1.3em;
-    font-weight: lighter;
+  font-size: calc(18px + 0.1vw);
+  line-height: 1.3em;
+  font-weight: lighter;
 }
 
 .job-title {
-    font-weight: lighter;
+  font-weight: lighter;
 }
 
 .job-description {
-    padding: 0;
+  padding: 0;
 }
-
 
 /* tablet */
 @media screen and (min-width: 655px) {
-    .job-description {
-        padding: 0 20px 0 20px;
-    }
+  .job-description {
+    padding: 0 20px 0 20px;
+  }
 }
 
 /* desktop */
 @media screen and (min-width: 1222px) {
-    .job-description {
-        padding: 0 60px 0 60px;
-    }
+  .job-description {
+    padding: 0 60px 0 60px;
+  }
 }

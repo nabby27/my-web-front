@@ -9,9 +9,9 @@ export const workExperience: WorkExperience[] = [
     jobs: [
       {
         title: 'Software Developer',
-        description: 'GUD_SOFTARE_DEVELOP_DESCRIPTION'
-      }
-    ]
+        description: 'GUD_SOFTARE_DEVELOP_DESCRIPTION',
+      },
+    ],
   },
   {
     company: 'Odec',
@@ -21,7 +21,7 @@ export const workExperience: WorkExperience[] = [
     jobs: [
       {
         title: 'Software Developer',
-        description: 'ODEC_SOFTARE_DEVELOP_DESCRIPTION'
+        description: 'ODEC_SOFTARE_DEVELOP_DESCRIPTION',
       },
       {
         title: 'Systems Administrator',
@@ -33,9 +33,9 @@ export const workExperience: WorkExperience[] = [
           'Security controls and alerts',
           'Purchases of hardware and complementary material',
           'Management and creation of company accounts',
-          'Preparation of environments for development teams'
-        ]
-      }
-    ]
-  }
+          'Preparation of environments for development teams',
+        ],
+      },
+    ],
+  },
 ];

@@ -6,17 +6,14 @@ import { faMapMarkerAlt, faHourglassEnd, faDownload, faGlobe } from '@fortawesom
 @Component({
   selector: 'app-academic-title-card',
   templateUrl: './academic-title-card.component.html',
-  styleUrls: ['./academic-title-card.component.scss']
+  styleUrls: ['./academic-title-card.component.scss'],
 })
 export class AcademicTitleCardComponent implements OnInit {
-
   @Input() academicTitle;
 
   constructor(library: FaIconLibrary, public translate: TranslateService) {
     library.addIcons(faMapMarkerAlt, faGlobe, faHourglassEnd, faDownload);
   }
 
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }

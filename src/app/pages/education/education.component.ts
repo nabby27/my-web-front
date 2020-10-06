@@ -8,18 +8,13 @@ import { AcademicTitle } from './models/academic-title';
 @Component({
   selector: 'app-education',
   templateUrl: './education.component.html',
-  styleUrls: ['./education.component.scss']
+  styleUrls: ['./education.component.scss'],
 })
 export class EducationComponent {
-
   academicsTrainings: AcademicTitle[] = academicTraining;
   courses: AcademicTitle[] = courses;
 
-  constructor(
-    public translate: TranslateService,
-    private library: FaIconLibrary
-  ) {
+  constructor(public translate: TranslateService, private library: FaIconLibrary) {
     this.library.addIcons(faAward, faGraduationCap);
   }
-
 }

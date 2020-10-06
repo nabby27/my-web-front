@@ -7,29 +7,23 @@ import { Project } from './models/project';
 @Component({
   selector: 'app-projects',
   templateUrl: './projects.component.html',
-  styleUrls: ['./projects.component.scss']
+  styleUrls: ['./projects.component.scss'],
 })
 export class ProjectsComponent implements OnInit, OnDestroy {
-
   githubUsername: string;
   githubRepositories: Project[];
   numberOfGithubRepositories: number;
   getProejctsSubscription: Subscription;
 
-  constructor(
-    public translate: TranslateService,
-    private githubService: GithubService,
-  ) {}
+  constructor(public translate: TranslateService, private githubService: GithubService) {}
 
   ngOnInit() {
     this.githubUsername = this.githubService.USER;
 
-    this.getProejctsSubscription = this.githubService.getProjects().subscribe(
-      (response: Project[]) => {
-        this.githubRepositories = response;
-        this.countRepositories();
-      }
-    );
+    this.getProejctsSubscription = this.githubService.getProjects().subscribe((response: Project[]) => {
+      this.githubRepositories = response;
+      this.countRepositories();
+    });
   }
 
   ngOnDestroy() {
@@ -44,6 +38,5 @@ export class ProjectsComponent implements OnInit, OnDestroy {
         clearInterval(interval);
       }
     }, 2000 / this.githubRepositories.length);
-  }
-
+  };
 }

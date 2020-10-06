@@ -7,8 +7,8 @@ input::-webkit-inner-spin-button {
 }
 
 /* Firefox */
-input[type=number] {
-  -moz-appearance:textfield;
+input[type='number'] {
+  -moz-appearance: textfield;
 }
 /************************************** end reset number input style **************************************/
 
@@ -72,5 +72,4 @@ mat-form-field {
     margin-top: 50px;
     font-size: 18px;
   }
-
 }

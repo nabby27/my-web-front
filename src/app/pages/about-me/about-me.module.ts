@@ -10,23 +10,13 @@ import { MaterialModule } from '../../core/material/material.module';
 const routes: Routes = [
   {
     path: '',
-    component: AboutMeComponent
-  }
+    component: AboutMeComponent,
+  },
 ];
 
 @NgModule({
-  declarations: [
-    AboutMeComponent
-  ],
-  imports: [
-    CommonModule,
-    TranslateModule,
-    LinkIconsModule,
-    MaterialModule,
-    RouterModule.forChild(routes)
-  ],
-  exports: [
-    RouterModule
-  ]
+  declarations: [AboutMeComponent],
+  imports: [CommonModule, TranslateModule, LinkIconsModule, MaterialModule, RouterModule.forChild(routes)],
+  exports: [RouterModule],
 })
-export class AboutMeModule { }
+export class AboutMeModule {}

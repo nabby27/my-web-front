@@ -7,9 +7,11 @@
     "build": "ng build",
     "analyzer": "ng build --prod --stats-json && webpack-bundle-analyzer dist/my-web-front/browser/stats.json",
     "lint": "ng lint",
+    "prettier:check": "npx prettier --check ./src/app ./cypress",
+    "prettier:fix": "npx prettier --write ./src/app ./cypress",
     "test:accessibility": "npx pa11y-ci --config pa11y-ci.json",
     "test:e2e": "npx cypress run --spec 'cypress/integration/app/**/*'",
-    "test:all": "npm run test:accessibility && npm run test:e2e",
+    "test:all": "npm run lint && npm run test:accessibility && npm run test:e2e",
     "serve:ssr": "node dist/my-web-front/server/main.js",
     "build:ssr:dev": "ng build && ng run my-web-front:server",
     "build:ssr:prod": "ng build --prod && ng run my-web-front:server:production",
@@ -54,10 +56,17 @@
     "@types/node": "^12.12.53",
     "codelyzer": "^6.0.0",
     "cypress": "^4.11.0",
-    "pa11y-ci": "^2.3.0",
+    "husky": "^4.3.0",
+    "pa11y-ci": "^2.4.0",
+    "prettier": "^2.1.2",
     "ts-node": "~7.0.0",
     "tslint": "~6.1.0",
     "typescript": "~3.9.7",
     "webpack-bundle-analyzer": "^3.6.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run prettier:fix && npm run lint"
+    }
   }
 }

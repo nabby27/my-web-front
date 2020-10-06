@@ -11,10 +11,9 @@ import { SnackbarComponent } from '../snackbar/snackbar.component';
 @Component({
   selector: 'app-contact-form-card',
   templateUrl: './contact-form-card.component.html',
-  styleUrls: ['./contact-form-card.component.scss']
+  styleUrls: ['./contact-form-card.component.scss'],
 })
 export class ContactFormCardComponent implements OnInit, OnDestroy {
-
   isMailBeenSended = false;
   sendMailSubscription: Subscription;
 
@@ -22,7 +21,7 @@ export class ContactFormCardComponent implements OnInit, OnDestroy {
     name: ['', [Validators.required]],
     email: ['', [Validators.required, Validators.email]],
     sum: ['', [Validators.required, this.correctSum.bind(this)]],
-    message: ['', [Validators.required]]
+    message: ['', [Validators.required]],
   });
 
   num1ToSum: number;
@@ -46,20 +45,24 @@ export class ContactFormCardComponent implements OnInit, OnDestroy {
   }
 
   randomNumberToSum() {
-    this.num1ToSum = Math.floor((Math.random() * 6));
-    this.num2ToSum = Math.floor((Math.random() * 6));
+    this.num1ToSum = Math.floor(Math.random() * 6);
+    this.num2ToSum = Math.floor(Math.random() * 6);
   }
 
   correctSum(control: AbstractControl): { [key: string]: any } | null {
-    return this.num1ToSum + this.num2ToSum === control.value ? null : { 'correctSum': true };
+    return this.num1ToSum + this.num2ToSum === control.value ? null : { correctSum: true };
   }
 
   sendMail(contactFormDirective: FormGroupDirective) {
     const data: ContactForm = this.contactForm.value;
     this.isMailBeenSended = true;
     this.sendMailSubscription = this.mailService.sendMail(data).subscribe(
-      () => { this.openSnackBar('SUCCESS_SEND_MAIL', true); },
-      () => { this.openSnackBar('ERROR_SEND_MAIL', false); },
+      () => {
+        this.openSnackBar('SUCCESS_SEND_MAIL', true);
+      },
+      () => {
+        this.openSnackBar('ERROR_SEND_MAIL', false);
+      }
     );
     this.contactForm.reset();
     contactFormDirective.resetForm();
@@ -71,8 +74,8 @@ export class ContactFormCardComponent implements OnInit, OnDestroy {
       duration: 7000,
       data: {
         message: message,
-        success
-      }
+        success,
+      },
     });
     this.isMailBeenSended = false;
   }
@@ -92,5 +95,4 @@ export class ContactFormCardComponent implements OnInit, OnDestroy {
   get message() {
     return this.contactForm.get('message');
   }
-
 }

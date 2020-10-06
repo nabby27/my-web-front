@@ -9,10 +9,9 @@ import { MatSidenav } from '@angular/material/sidenav';
 @Component({
   selector: 'app-sidenav',
   templateUrl: './sidenav.component.html',
-  styleUrls: ['./sidenav.component.scss']
+  styleUrls: ['./sidenav.component.scss'],
 })
 export class SidenavComponent implements OnInit {
-
   @Input() sidenavElement: MatSidenav;
   @Input() isDesktopScreen: boolean;
 
@@ -24,7 +23,7 @@ export class SidenavComponent implements OnInit {
     { text: 'WORK EXPERIENCE', url: '/work-experience' },
     { text: 'PROJECTS', url: '/projects' },
     { text: 'ABOUT ME', url: '/about-me' },
-    { text: 'CONTACT', url: '/contact' }
+    { text: 'CONTACT', url: '/contact' },
   ];
 
   constructor(
@@ -57,5 +56,4 @@ export class SidenavComponent implements OnInit {
     this.themeService.setDarkTheme(checked);
     this.isDarkTheme = !this.isDarkTheme;
   }
-
 }

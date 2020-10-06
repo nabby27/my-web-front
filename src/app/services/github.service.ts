@@ -7,17 +7,13 @@ import { Project } from '../pages/projects/models/project';
 import { Injectable } from '@angular/core';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class GithubService {
-
   readonly URL = 'https://api.github.com';
   readonly USER = 'nabby27';
 
-  constructor(
-    private http: HttpClient,
-    private cacheService: CacheService
-  ) { }
+  constructor(private http: HttpClient, private cacheService: CacheService) {}
 
   getProjects(): Observable<Project[]> {
     const projects = this.cacheService.getItemToCache('github_projects');
@@ -29,10 +25,12 @@ export class GithubService {
   }
 
   private getProjectsFromAPI(): Observable<Project[]> {
-    return this.http.get(`${this.URL}/users/${this.USER}/repos`).pipe(map((response: Project[]) => {
-      this.cacheService.addItemToCache('github_projects', response);
-      return response;
-    }));
-  }
+    return this.http.get(`${this.URL}/users/${this.USER}/repos`).pipe(
+      map((response: Project[]) => {
+        this.cacheService.addItemToCache('github_projects', response);
 
+        return response;
+      })
+    );
+  }
 }

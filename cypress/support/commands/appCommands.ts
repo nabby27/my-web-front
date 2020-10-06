@@ -25,7 +25,7 @@
 // Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
 
 Cypress.Commands.add('clickOnHeaderName', () => {
-    cy.get('[data-cy=headerName]').click();
+  cy.get('[data-cy=headerName]').click();
 });
 
 Cypress.Commands.add('isInHomePage', () => {
@@ -73,13 +73,15 @@ Cypress.Commands.add('checkTwitterIconLink', () => {
 });
 
 const isInPage = (url: string, menuPosition: number, containerPage: string, textOnPage: string) => {
-  cy.url().should('include', url)
-    .get('[data-cy=sidenavMenuElement]').eq(menuPosition).should('have.css', 'background-color', 'rgb(33, 33, 33)')
-    .get(`[data-cy=${containerPage}]`).contains(textOnPage);
+  cy.url()
+    .should('include', url)
+    .get('[data-cy=sidenavMenuElement]')
+    .eq(menuPosition)
+    .should('have.css', 'background-color', 'rgb(33, 33, 33)')
+    .get(`[data-cy=${containerPage}]`)
+    .contains(textOnPage);
 };
 
 const checkIconLink = (iconId: string, url: string) => {
-  cy.get(`[data-cy=${iconId}]`)
-    .should('have.attr', 'target', '_blank')
-    .should('have.attr', 'href', url);
+  cy.get(`[data-cy=${iconId}]`).should('have.attr', 'target', '_blank').should('have.attr', 'href', url);
 };

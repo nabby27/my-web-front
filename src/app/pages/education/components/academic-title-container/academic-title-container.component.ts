@@ -5,15 +5,12 @@ import { AcademicTitle } from '../../models/academic-title';
 @Component({
   selector: 'app-academic-title-container',
   templateUrl: './academic-title-container.component.html',
-  styleUrls: ['./academic-title-container.component.scss']
+  styleUrls: ['./academic-title-container.component.scss'],
 })
 export class AcademicTitleContainerComponent {
-
   @Input() title: string;
   @Input() icon: string[];
   @Input() academicTitles: AcademicTitle[];
 
-  constructor(public translate: TranslateService) {
-  }
-
+  constructor(public translate: TranslateService) {}
 }

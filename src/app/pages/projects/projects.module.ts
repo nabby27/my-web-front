@@ -11,24 +11,13 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 const routes: Routes = [
   {
     path: '',
-    component: ProjectsComponent
-  }
+    component: ProjectsComponent,
+  },
 ];
 
 @NgModule({
-  declarations: [
-    ProjectsComponent,
-    GithubCardComponent
-  ],
-  imports: [
-    CommonModule,
-    MaterialModule,
-    TranslateModule,
-    FontAwesomeModule,
-    RouterModule.forChild(routes)
-  ],
-  exports: [
-    RouterModule
-  ]
+  declarations: [ProjectsComponent, GithubCardComponent],
+  imports: [CommonModule, MaterialModule, TranslateModule, FontAwesomeModule, RouterModule.forChild(routes)],
+  exports: [RouterModule],
 })
-export class ProjectsModule { }
+export class ProjectsModule {}

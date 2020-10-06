@@ -8,14 +8,12 @@ import { aboutMeSocialNetworks } from './constants';
 @Component({
   selector: 'app-about-me',
   templateUrl: './about-me.component.html',
-  styleUrls: ['./about-me.component.scss']
+  styleUrls: ['./about-me.component.scss'],
 })
 export class AboutMeComponent {
-
   socialNetworks: SocialNetwork[] = aboutMeSocialNetworks;
 
   constructor(private library: FaIconLibrary, public translate: TranslateService) {
     this.library.addIcons(faLinkedin, faInstagram, faTwitter);
   }
-
 }

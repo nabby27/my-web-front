@@ -18,5 +18,4 @@ context('Home Page', () => {
     cy.clickOnMenuHome();
     cy.isInHomePage();
   });
-
 });

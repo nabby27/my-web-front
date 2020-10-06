@@ -5,15 +5,12 @@ import { WorkExperience } from '../../models/work-experience';
 @Component({
   selector: 'app-work-experience-card',
   templateUrl: './work-experience-card.component.html',
-  styleUrls: ['./work-experience-card.component.scss']
+  styleUrls: ['./work-experience-card.component.scss'],
 })
 export class WorkExperienceCardComponent implements OnInit {
-
   @Input() workExperience: WorkExperience;
 
-  constructor(public translate: TranslateService) { }
+  constructor(public translate: TranslateService) {}
 
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }

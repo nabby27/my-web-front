@@ -1,11 +1,13 @@
 <main class="education-container" data-cy="educationContainer">
   <mat-accordion multi="true">
-    <app-academic-title-container [title]="'ACADEMIC TRAINING'"
-      [icon]="['fas', 'graduation-cap']" [academicTitles]="academicsTrainings">
+    <app-academic-title-container
+      [title]="'ACADEMIC TRAINING'"
+      [icon]="['fas', 'graduation-cap']"
+      [academicTitles]="academicsTrainings"
+    >
     </app-academic-title-container>
 
-    <app-academic-title-container [title]="'COURSES'"
-      [icon]="['fas', 'award']" [academicTitles]="courses">
+    <app-academic-title-container [title]="'COURSES'" [icon]="['fas', 'award']" [academicTitles]="courses">
     </app-academic-title-container>
   </mat-accordion>
 </main>

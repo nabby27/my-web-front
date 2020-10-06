@@ -1,178 +1,182 @@
 Cypress.Commands.add('haveTwoContactCards', () => {
-    cy.get('[data-cy=contactCard]').children().should('have.length', 2);
+  cy.get('[data-cy=contactCard]').children().should('have.length', 2);
 });
 
 Cypress.Commands.add('isNotShowingRequiredErrorOnInputName', () => {
-    isNotShowingInputError('contactFieldNameRequiredError');
+  isNotShowingInputError('contactFieldNameRequiredError');
 });
 
 Cypress.Commands.add('isNotShowingRequiredErrorOnInputEmail', () => {
-    isNotShowingInputError('contactFieldEmailRequiredError');
+  isNotShowingInputError('contactFieldEmailRequiredError');
 });
 
 Cypress.Commands.add('isNotShowingInvalidErrorOnInputEmail', () => {
-    isNotShowingInputError('contactFieldEmailIvalidError');
+  isNotShowingInputError('contactFieldEmailIvalidError');
 });
 
 Cypress.Commands.add('isNotShowingRequiredErrorOnInputSum', () => {
-    isNotShowingInputError('contactFieldSumRequiredError');
+  isNotShowingInputError('contactFieldSumRequiredError');
 });
 
 Cypress.Commands.add('isNotShowingInvalidErrorOnInputSum', () => {
-    isNotShowingInputError('contactFieldSumInvalidError');
+  isNotShowingInputError('contactFieldSumInvalidError');
 });
 
 Cypress.Commands.add('isNotShowingRequiredErrorOnInputMessage', () => {
-    isNotShowingInputError('contactFieldMessageRequiredError');
+  isNotShowingInputError('contactFieldMessageRequiredError');
 });
 
 Cypress.Commands.add('isShowingRequiredErrorOnInputName', () => {
-    isShowingInputError('contactFieldNameRequiredError');
+  isShowingInputError('contactFieldNameRequiredError');
 });
 
 Cypress.Commands.add('isShowingRequiredErrorOnInputEmail', () => {
-    isShowingInputError('contactFieldEmailRequiredError');
+  isShowingInputError('contactFieldEmailRequiredError');
 });
 
 Cypress.Commands.add('isShowingInvalidErrorOnInputEmail', () => {
-    isShowingInputError('contactFieldEmailInvalidError');
+  isShowingInputError('contactFieldEmailInvalidError');
 });
 
 Cypress.Commands.add('isShowingRequiredErrorOnInputSum', () => {
-    isShowingInputError('contactFieldSumRequiredError');
+  isShowingInputError('contactFieldSumRequiredError');
 });
 
 Cypress.Commands.add('isShowingInvalidErrorOnInputSum', () => {
-    isShowingInputError('contactFieldSumInvalidError');
+  isShowingInputError('contactFieldSumInvalidError');
 });
 
 Cypress.Commands.add('isShowingRequiredErrorOnInputMessage', () => {
-    isShowingInputError('contactFieldMessageRequiredError');
+  isShowingInputError('contactFieldMessageRequiredError');
 });
 
 Cypress.Commands.add('addTextToInputNameBeforeClear', () => {
-    addTextToInputBeforeClear('contactFieldNameInput', 'nabby27');
+  addTextToInputBeforeClear('contactFieldNameInput', 'nabby27');
 });
 
 Cypress.Commands.add('addTextToInputEmailBeforeClear', () => {
-    addTextToInputBeforeClear('contactFieldEmailInput', 'nabby27');
+  addTextToInputBeforeClear('contactFieldEmailInput', 'nabby27');
 });
 
 Cypress.Commands.add('addInvalidEmailToInputEmail', () => {
-    addTextToInput('contactFieldEmailInput', 'nabby27');
+  addTextToInput('contactFieldEmailInput', 'nabby27');
 });
 
 Cypress.Commands.add('addTextToInputSumBeforeClear', () => {
-    addTextToInputBeforeClear('contactFieldSumInput', '1');
+  addTextToInputBeforeClear('contactFieldSumInput', '1');
 });
 
 Cypress.Commands.add('addInvalidSumToInputSum', () => {
-    let sum = 10;
-    cy.get('[data-cy=contactFieldSumRandomNumbers]').children().each((element: JQuery<HTMLElement>) => {
-        sum += parseInt(element.text(), 10);
+  let sum = 10;
+  cy.get('[data-cy=contactFieldSumRandomNumbers]')
+    .children()
+    .each((element: JQuery<HTMLElement>) => {
+      sum += parseInt(element.text(), 10);
     })
     .then(() => addTextToInput('contactFieldSumInput', sum.toString()));
 });
 
 Cypress.Commands.add('addTextToInputMessageBeforeClear', () => {
-    addTextToInputBeforeClear('contactFieldMessageInput', 'nabby27');
+  addTextToInputBeforeClear('contactFieldMessageInput', 'nabby27');
 });
 
 Cypress.Commands.add('addTextToInputName', () => {
-    addTextToInput('contactFieldNameInput', 'nabby27');
+  addTextToInput('contactFieldNameInput', 'nabby27');
 });
 
 Cypress.Commands.add('addValidEmailToInputEmail', () => {
-    addTextToInput('contactFieldEmailInput', 'nabby27@example.com');
+  addTextToInput('contactFieldEmailInput', 'nabby27@example.com');
 });
 
 Cypress.Commands.add('addValidSumToInputSum', () => {
-    let sum = 0;
-    cy.get('[data-cy=contactFieldSumRandomNumbers]').children().each((element: JQuery<HTMLElement>) => {
-        sum += parseInt(element.text(), 10);
+  let sum = 0;
+  cy.get('[data-cy=contactFieldSumRandomNumbers]')
+    .children()
+    .each((element: JQuery<HTMLElement>) => {
+      sum += parseInt(element.text(), 10);
     })
     .then(() => addTextToInput('contactFieldSumInput', sum.toString()));
 });
 
 Cypress.Commands.add('addValidMessageToInputMessage', () => {
-    addTextToInput('contactFieldMessageInput', 'Say hello!');
+  addTextToInput('contactFieldMessageInput', 'Say hello!');
 });
 
 Cypress.Commands.add('lostFocusOnInput', () => {
-    cy.get('[data-cy=contactCard]').first().click();
+  cy.get('[data-cy=contactCard]').first().click();
 });
 
 Cypress.Commands.add('isContactSubmitButtonDisabled', () => {
-    checkContactButtonDisabled('be.disabled');
+  checkContactButtonDisabled('be.disabled');
 });
 
 Cypress.Commands.add('isContactSubmitButtonEnabled', () => {
-    checkContactButtonDisabled('not.be.disabled');
+  checkContactButtonDisabled('not.be.disabled');
 });
 
 Cypress.Commands.add('clickContactSubmitButton', () => {
-    cy.get('[data-cy=contactSubmitButton]').click();
+  cy.get('[data-cy=contactSubmitButton]').click();
 });
 
 Cypress.Commands.add('isVisibleErrorSnackbar', () => {
-    cy.get('[data-cy=snackBarErrorIcon]').should('be.visible');
+  cy.get('[data-cy=snackBarErrorIcon]').should('be.visible');
 });
 
 Cypress.Commands.add('isVisibleSuccessSnackbar', () => {
-    cy.get('[data-cy=snackBarSuccesIcon]').should('be.visible');
+  cy.get('[data-cy=snackBarSuccesIcon]').should('be.visible');
 });
 
 Cypress.Commands.add('fillAndSendContactForm', () => {
-    cy.addTextToInputName();
-    cy.addValidEmailToInputEmail();
-    cy.addValidSumToInputSum();
-    cy.addValidMessageToInputMessage();
-    cy.clickContactSubmitButton();
+  cy.addTextToInputName();
+  cy.addValidEmailToInputEmail();
+  cy.addValidSumToInputSum();
+  cy.addValidMessageToInputMessage();
+  cy.clickContactSubmitButton();
 });
 
 Cypress.Commands.add('mockFailResponseWhenSendMail', () => {
-    mockResponseWhenSendMail(400, false);
+  mockResponseWhenSendMail(400, false);
 });
 
 Cypress.Commands.add('mockSuccessResponseWhenSendMail', () => {
-    mockResponseWhenSendMail(200, true);
+  mockResponseWhenSendMail(200, true);
 });
 
 Cypress.Commands.add('waitMockResponseOnSendMail', () => {
-    cy.wait('@sendMail');
+  cy.wait('@sendMail');
 });
 
 const isNotShowingInputError = (errorAnchorId: string) => {
-    checkInputErrorVisibility(errorAnchorId, 'not.visible');
+  checkInputErrorVisibility(errorAnchorId, 'not.visible');
 };
 
 const isShowingInputError = (errorAnchorId: string) => {
-    checkInputErrorVisibility(errorAnchorId, 'visible');
+  checkInputErrorVisibility(errorAnchorId, 'visible');
 };
 
 const checkInputErrorVisibility = (errorAnchorId: string, isVisibile: 'visible' | 'not.visible') => {
-    cy.get(`[data-cy=${errorAnchorId}]`).should(isVisibile);
+  cy.get(`[data-cy=${errorAnchorId}]`).should(isVisibile);
 };
 
 const addTextToInputBeforeClear = (inputAnchorId: string, textToInput: string) => {
-    addTextToInput(inputAnchorId, textToInput);
-    cy.get(`[data-cy=${inputAnchorId}]`).clear();
+  addTextToInput(inputAnchorId, textToInput);
+  cy.get(`[data-cy=${inputAnchorId}]`).clear();
 };
 
 const addTextToInput = (inputAnchorId: string, textToInput: string) => {
-    cy.get(`[data-cy=${inputAnchorId}]`).type(textToInput);
+  cy.get(`[data-cy=${inputAnchorId}]`).type(textToInput);
 };
 
 const checkContactButtonDisabled = (disabledExpected: 'not.be.disabled' | 'be.disabled') => {
-    cy.get('[data-cy=contactSubmitButton]').should(disabledExpected);
+  cy.get('[data-cy=contactSubmitButton]').should(disabledExpected);
 };
 
 const mockResponseWhenSendMail = (status: number, response?: any) => {
-    cy.server();
-    cy.route({
-      method: 'POST',
-      url: '/api/sendMail',
-      response,
-      status
-    }).as('sendMail');
+  cy.server();
+  cy.route({
+    method: 'POST',
+    url: '/api/sendMail',
+    response,
+    status,
+  }).as('sendMail');
 };

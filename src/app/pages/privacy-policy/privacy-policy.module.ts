@@ -9,22 +9,13 @@ import { MaterialModule } from '../../core/material/material.module';
 const routes: Routes = [
   {
     path: '',
-    component: PrivacyPolicyComponent
-  }
+    component: PrivacyPolicyComponent,
+  },
 ];
 
 @NgModule({
-  declarations: [
-    PrivacyPolicyComponent
-  ],
-  imports: [
-    CommonModule,
-    TranslateModule,
-    MaterialModule,
-    RouterModule.forChild(routes)
-  ],
-  exports: [
-    RouterModule
-  ]
+  declarations: [PrivacyPolicyComponent],
+  imports: [CommonModule, TranslateModule, MaterialModule, RouterModule.forChild(routes)],
+  exports: [RouterModule],
 })
-export class PrivacyPolicyModule { }
+export class PrivacyPolicyModule {}

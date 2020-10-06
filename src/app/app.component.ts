@@ -8,15 +8,14 @@ import { isPlatformBrowser } from '@angular/common';
 import { filter } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 
-declare var gtag: any;
+declare let gtag: any;
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
-
   isDesktopScreen: boolean;
   isDarkTheme: Observable<boolean>;
 
@@ -34,7 +33,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.checkScreenSize();
-    this.navigationEnd = this.router.events.pipe(filter(event => event instanceof NavigationEnd));
+    this.navigationEnd = this.router.events.pipe(filter((event) => event instanceof NavigationEnd));
     this.goTopWhenComponentChange();
     this.trackingNavigationOnGoogleAnalytics();
     this.setDefaultConfig();
@@ -48,7 +47,7 @@ export class AppComponent implements OnInit {
         this.isDesktopScreen = this.screenService.isDesktopScreen();
       };
     }
-  }
+  };
 
   goTopWhenComponentChange = () => {
     this.navigationEnd.subscribe(() => {
@@ -56,17 +55,17 @@ export class AppComponent implements OnInit {
         window.scrollTo(0, 0);
       }
     });
-  }
+  };
 
   trackingNavigationOnGoogleAnalytics = () => {
     this.navigationEnd.subscribe((event: NavigationEnd) => {
       if (isPlatformBrowser(this.platformId) && environment.production) {
-          gtag('config', 'UA-156632619-1', {
-            'page_path': event.urlAfterRedirects
-          });
-        }
+        gtag('config', 'UA-156632619-1', {
+          page_path: event.urlAfterRedirects,
+        });
+      }
     });
-  }
+  };
 
   setDefaultConfig = () => {
     if (isPlatformBrowser(this.platformId)) {
@@ -89,6 +88,5 @@ export class AppComponent implements OnInit {
         this.translate.setDefaultLang(lang);
       }
     }
-  }
-
+  };
 }

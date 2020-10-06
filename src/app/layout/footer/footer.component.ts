@@ -4,14 +4,10 @@ import { TranslateService } from '@ngx-translate/core';
 @Component({
   selector: 'app-footer',
   templateUrl: './footer.component.html',
-  styleUrls: ['./footer.component.scss']
+  styleUrls: ['./footer.component.scss'],
 })
 export class FooterComponent {
+  currentYear = new Date().getFullYear();
 
-  currentYear = (new Date()).getFullYear();
-
-  constructor(
-    public translate: TranslateService
-  ) {}
-
+  constructor(public translate: TranslateService) {}
 }

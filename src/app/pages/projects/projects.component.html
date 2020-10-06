@@ -1,7 +1,8 @@
 <main data-cy="projectsContainer">
   <div *ngIf="githubRepositories" class="projects-header">
-    <h1 class="github-username">{{githubUsername}}</h1> |
-    <h2 class="github-number-projects">{{numberOfGithubRepositories}} {{'projects' | translate}}</h2>
+    <h1 class="github-username">{{ githubUsername }}</h1>
+    |
+    <h2 class="github-number-projects">{{ numberOfGithubRepositories }} {{ 'projects' | translate }}</h2>
   </div>
   <ul *ngIf="githubRepositories" class="list-repositories">
     <li *ngFor="let githubRepository of githubRepositories" class="list-repository-item">

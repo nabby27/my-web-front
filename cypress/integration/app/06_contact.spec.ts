@@ -117,5 +117,4 @@ context('Contact Page', () => {
     cy.waitMockResponseOnSendMail();
     cy.isVisibleSuccessSnackbar();
   });
-
 });

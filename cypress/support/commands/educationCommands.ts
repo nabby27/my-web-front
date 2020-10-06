@@ -31,13 +31,14 @@ Cypress.Commands.add('isCoursesPanelOpened', () => {
 });
 
 const checkTitlesOnPanel = (numberPanel: number, expectedTitles: number) => {
-  cy.get('[data-cy=academicTitlesContainer]').eq(numberPanel)
-    .find('[data-cy=academicTitleCard]').should('have.length', expectedTitles);
+  cy.get('[data-cy=academicTitlesContainer]')
+    .eq(numberPanel)
+    .find('[data-cy=academicTitleCard]')
+    .should('have.length', expectedTitles);
 };
 
 const clickPanelHeader = (numberPanel: number) => {
-  cy.get('[data-cy=academicTitlesContainer]').eq(numberPanel)
-    .find('[data-cy=academicTitlesContainerHeader]').click();
+  cy.get('[data-cy=academicTitlesContainer]').eq(numberPanel).find('[data-cy=academicTitlesContainerHeader]').click();
 };
 
 const isPanelVisible = (numberPanel: number) => {
@@ -49,6 +50,8 @@ const isPanelNotVisible = (numberPanel: number) => {
 };
 
 const checkPanelVisibility = (numberPanel: number, visible: 'visible' | 'not.visible') => {
-  cy.get('[data-cy=academicTitlesContainer]').eq(numberPanel)
-    .find('[data-cy=academicTitlesContainerContent]').should(visible);
+  cy.get('[data-cy=academicTitlesContainer]')
+    .eq(numberPanel)
+    .find('[data-cy=academicTitlesContainerContent]')
+    .should(visible);
 };

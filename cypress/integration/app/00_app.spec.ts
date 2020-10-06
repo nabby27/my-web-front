@@ -50,8 +50,6 @@ context('App', () => {
   });
 
   it('should show current date on footer', () => {
-    cy.get('[data-cy=footer]')
-      .contains(new Date().getFullYear());
+    cy.get('[data-cy=footer]').contains(new Date().getFullYear());
   });
-
 });

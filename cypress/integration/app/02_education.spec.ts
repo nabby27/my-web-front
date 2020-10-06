@@ -34,5 +34,4 @@ context('Education Page', () => {
     cy.clickCoursesHeader();
     cy.isCoursesPanelOpened();
   });
-
 });

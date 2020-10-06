@@ -9,13 +9,6 @@ import { FooterModule } from '../layout/footer/footer.module';
 @NgModule({
   declarations: [],
   imports: [],
-  exports: [
-    HttpClientModule,
-    MaterialModule,
-    FontAwesomeModule,
-    SidenavModule,
-    HeaderModule,
-    FooterModule
-  ]
+  exports: [HttpClientModule, MaterialModule, FontAwesomeModule, SidenavModule, HeaderModule, FooterModule],
 })
-export class CoreModule { }
+export class CoreModule {}

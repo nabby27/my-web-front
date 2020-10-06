@@ -7,20 +7,9 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { SidenavComponent } from './sidenav.component';
 import { MaterialModule } from '../../core/material/material.module';
 
-
 @NgModule({
-  declarations: [
-    SidenavComponent
-  ],
-  imports: [
-    CommonModule,
-    RouterModule,
-    MaterialModule,
-    FontAwesomeModule,
-    TranslateModule
-  ],
-  exports: [
-    SidenavComponent
-  ]
+  declarations: [SidenavComponent],
+  imports: [CommonModule, RouterModule, MaterialModule, FontAwesomeModule, TranslateModule],
+  exports: [SidenavComponent],
 })
-export class SidenavModule { }
+export class SidenavModule {}

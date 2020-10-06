@@ -8,10 +8,9 @@ import { Project } from '../../models/project';
 @Component({
   selector: 'app-github-card',
   templateUrl: './github-card.component.html',
-  styleUrls: ['./github-card.component.scss']
+  styleUrls: ['./github-card.component.scss'],
 })
 export class GithubCardComponent {
-
   @Input() githubRepository: Project;
 
   programmingLanguageColors = programmingLanguageColors;
@@ -23,5 +22,4 @@ export class GithubCardComponent {
   getColorForProgrammingLanguage(programmingLanguage: string): string {
     return this.programmingLanguageColors[programmingLanguage.toUpperCase()];
   }
-
 }

@@ -2,15 +2,12 @@ import { Injectable, PLATFORM_ID, Inject } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ThemeService {
-
   isDark: boolean;
 
-  constructor(
-    @Inject(PLATFORM_ID) private platformId: object,
-  ) {}
+  constructor(@Inject(PLATFORM_ID) private platformId: object) {}
 
   setDarkTheme(isDarkTheme: boolean): void {
     if (isPlatformBrowser(this.platformId)) {
@@ -27,5 +24,4 @@ export class ThemeService {
       }
     }
   }
-
 }

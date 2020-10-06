@@ -8,9 +8,8 @@ describe('LinkIconsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [LinkIconsComponent]
-    })
-      .compileComponents();
+      declarations: [LinkIconsComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {

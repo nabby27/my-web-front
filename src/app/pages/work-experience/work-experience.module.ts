@@ -10,20 +10,12 @@ import { TranslateModule } from '@ngx-translate/core';
 const routes: Routes = [
   {
     path: '',
-    component: WorkExperienceComponent
-  }
+    component: WorkExperienceComponent,
+  },
 ];
 
 @NgModule({
-  declarations: [
-    WorkExperienceComponent,
-    WorkExperienceCardComponent,
-  ],
-  imports: [
-    CommonModule,
-    MaterialModule,
-    TranslateModule,
-    RouterModule.forChild(routes)
-  ]
+  declarations: [WorkExperienceComponent, WorkExperienceCardComponent],
+  imports: [CommonModule, MaterialModule, TranslateModule, RouterModule.forChild(routes)],
 })
-export class WorkExperienceModule { }
+export class WorkExperienceModule {}

@@ -4,45 +4,45 @@ import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 const routes: Routes = [
   {
     path: 'home',
-    loadChildren: () => import('./pages/home/home.module').then(m => m.HomeModule)
+    loadChildren: () => import('./pages/home/home.module').then((m) => m.HomeModule),
   },
   {
     path: 'education',
-    loadChildren: () => import('./pages/education/education.module').then(m => m.EducationModule)
+    loadChildren: () => import('./pages/education/education.module').then((m) => m.EducationModule),
   },
   {
     path: 'work-experience',
-    loadChildren: () => import('./pages/work-experience/work-experience.module').then(m => m.WorkExperienceModule)
+    loadChildren: () => import('./pages/work-experience/work-experience.module').then((m) => m.WorkExperienceModule),
   },
   {
     path: 'projects',
-    loadChildren: () => import('./pages/projects/projects.module').then(m => m.ProjectsModule)
+    loadChildren: () => import('./pages/projects/projects.module').then((m) => m.ProjectsModule),
   },
   {
     path: 'about-me',
-    loadChildren: () => import('./pages/about-me/about-me.module').then(m => m.AboutMeModule)
+    loadChildren: () => import('./pages/about-me/about-me.module').then((m) => m.AboutMeModule),
   },
   {
     path: 'contact',
-    loadChildren: () => import('./pages/contact/contact.module').then(m => m.ContactModule)
+    loadChildren: () => import('./pages/contact/contact.module').then((m) => m.ContactModule),
   },
   {
     path: 'privacy-policy',
-    loadChildren: () => import('./pages/privacy-policy/privacy-policy.module').then(m => m.PrivacyPolicyModule)
+    loadChildren: () => import('./pages/privacy-policy/privacy-policy.module').then((m) => m.PrivacyPolicyModule),
   },
   {
     path: '',
     redirectTo: '/home',
-    pathMatch: 'full'
+    pathMatch: 'full',
   },
   {
     path: '**',
-    redirectTo: '/home'
-  }
+    redirectTo: '/home',
+  },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, {preloadingStrategy: PreloadAllModules})],
-  exports: [RouterModule]
+  imports: [RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })],
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

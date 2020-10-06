@@ -12,22 +12,12 @@ import { AcademicTitleContainerComponent } from './components/academic-title-con
 const routes: Routes = [
   {
     path: '',
-    component: EducationComponent
-  }
+    component: EducationComponent,
+  },
 ];
 
 @NgModule({
-  declarations: [
-    EducationComponent,
-    AcademicTitleContainerComponent,
-    AcademicTitleCardComponent
-  ],
-  imports: [
-    CommonModule,
-    MaterialModule,
-    FontAwesomeModule,
-    TranslateModule,
-    RouterModule.forChild(routes)
-  ]
+  declarations: [EducationComponent, AcademicTitleContainerComponent, AcademicTitleCardComponent],
+  imports: [CommonModule, MaterialModule, FontAwesomeModule, TranslateModule, RouterModule.forChild(routes)],
 })
-export class EducationModule { }
+export class EducationModule {}

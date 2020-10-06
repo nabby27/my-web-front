@@ -24,5 +24,4 @@ context('About Me Page', () => {
   it('should go to twitter profile when click on twitter icon', () => {
     cy.checkTwitterIconLink();
   });
-
 });

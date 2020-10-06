@@ -9,10 +9,9 @@ import { headerSocialNetworks } from 'src/app/layout/header/constants';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss']
+  styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent {
-
   @Input() sidenavElement: MatSidenav;
 
   socialNetworks: SocialNetwork[] = headerSocialNetworks;
@@ -20,5 +19,4 @@ export class HeaderComponent {
   constructor(private library: FaIconLibrary) {
     this.library.addIcons(faGithub, faStackOverflow, faBars);
   }
-
 }

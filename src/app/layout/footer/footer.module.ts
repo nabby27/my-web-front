@@ -6,20 +6,9 @@ import { MaterialModule } from '../../core/material/material.module';
 import { RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 
-
-
 @NgModule({
-  declarations: [
-    FooterComponent
-  ],
-  imports: [
-    CommonModule,
-    RouterModule,
-    TranslateModule,
-    MaterialModule
-  ],
-  exports: [
-    FooterComponent
-  ]
+  declarations: [FooterComponent],
+  imports: [CommonModule, RouterModule, TranslateModule, MaterialModule],
+  exports: [FooterComponent],
 })
-export class FooterModule { }
+export class FooterModule {}

@@ -15,27 +15,20 @@ import { SnackbarComponent } from './components/snackbar/snackbar.component';
 const routes: Routes = [
   {
     path: '',
-    component: ContactComponent
-  }
+    component: ContactComponent,
+  },
 ];
 
 @NgModule({
-  declarations: [
-    ContactComponent,
-    ContactInfoCardComponent,
-    ContactFormCardComponent,
-    SnackbarComponent
-  ],
+  declarations: [ContactComponent, ContactInfoCardComponent, ContactFormCardComponent, SnackbarComponent],
   imports: [
     CommonModule,
     ReactiveFormsModule,
     MaterialModule,
     TranslateModule,
     FontAwesomeModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
   ],
-  exports: [
-    RouterModule
-  ]
+  exports: [RouterModule],
 })
-export class ContactModule { }
+export class ContactModule {}

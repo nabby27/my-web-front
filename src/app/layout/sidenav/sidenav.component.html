@@ -2,24 +2,42 @@
   <section class="sidenav-content">
     <nav class="sidenav-content-nav">
       <mat-button-toggle-group data-cy="sidenavMenu" class="menu-list" vertical="true">
-        <mat-button-toggle data-cy="sidenavMenuElement" *ngFor="let link of links" class="menu-item" mat-button [routerLink]="link.url"
-          routerLinkActive="mat-button-toggle-checked" (click)="closeIfIsMobile()">
-          {{link.text | translate}}
+        <mat-button-toggle
+          data-cy="sidenavMenuElement"
+          *ngFor="let link of links"
+          class="menu-item"
+          mat-button
+          [routerLink]="link.url"
+          routerLinkActive="mat-button-toggle-checked"
+          (click)="closeIfIsMobile()"
+        >
+          {{ link.text | translate }}
         </mat-button-toggle>
       </mat-button-toggle-group>
     </nav>
 
     <section class="sidenav-settings">
       <mat-form-field class="language-select" color="accent">
-        <mat-label>{{'language' | translate}}</mat-label>
-        <mat-select #selectedLang data-cy="languageSelect" (selectionChange)="switchLang(selectedLang.value)" [value]="translate.currentLang">
+        <mat-label>{{ 'language' | translate }}</mat-label>
+        <mat-select
+          #selectedLang
+          data-cy="languageSelect"
+          (selectionChange)="switchLang(selectedLang.value)"
+          [value]="translate.currentLang"
+        >
           <mat-option *ngFor="let language of translate.getLangs()" [value]="language">
             {{ language }}
           </mat-option>
         </mat-select>
       </mat-form-field>
 
-      <mat-slide-toggle data-cy="toggleDarkTheme" color="accent" (change)="toggleDarkTheme($event.checked)" [checked]="isDarkTheme" aria-label="change color theme">
+      <mat-slide-toggle
+        data-cy="toggleDarkTheme"
+        color="accent"
+        (change)="toggleDarkTheme($event.checked)"
+        [checked]="isDarkTheme"
+        aria-label="change color theme"
+      >
         <fa-icon *ngIf="!isDarkTheme" class="theme-icon" [icon]="['fas', 'adjust']" size="lg" rotate="180"></fa-icon>
         <fa-icon *ngIf="isDarkTheme" class="theme-icon" [icon]="['fas', 'adjust']" size="lg"></fa-icon>
       </mat-slide-toggle>
@@ -27,12 +45,10 @@
   </section>
 
   <section class="sidenav-footer" data-cy="sidenavFooter">
-    <img src="../../../assets/img/logo.svg" class="logo" alt="">
-    <h1 class="sidenav-footer-name">
-      Iván Córdoba
-    </h1>
+    <img src="../../../assets/img/logos/LOGO AZUL CON BORDE BLANCO.svg" class="logo" alt="" />
+    <h1 class="sidenav-footer-name">Iván Córdoba</h1>
     <h2 class="sidenav-footer-tagline">
-      {{'Software Developer' | translate}}
+      {{ 'Software Developer' | translate }}
     </h2>
   </section>
 </div>

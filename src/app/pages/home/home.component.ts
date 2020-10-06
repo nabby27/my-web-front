@@ -6,14 +6,10 @@ import { isPlatformBrowser } from '@angular/common';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-
-  constructor(
-    @Inject(PLATFORM_ID) private platformId: object,
-    public translate: TranslateService
-  ) { }
+  constructor(@Inject(PLATFORM_ID) private platformId: object, public translate: TranslateService) {}
 
   ngOnInit() {
     if (isPlatformBrowser(this.platformId)) {
@@ -22,5 +18,4 @@ export class HomeComponent implements OnInit {
       new Parallax(container);
     }
   }
-
 }
